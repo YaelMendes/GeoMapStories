@@ -1,0 +1,29 @@
+<h2>Commençons par quelques questions...</h2>
+<div>
+  <ul>
+      <span>{{currentQuestion.ask}}</span>
+      <input [(ngModel)]="proposition" />
+      <br/><br/>
+  </ul>
+</div>
+
+<div>
+  <div *ngIf="showError">
+    Essaie encore !
+    <br/>
+  </div>
+</div>
+
+<div>
+  <button (click)="check()">J'ai fini!</button>
+  <br/><br/>
+</div>
+
+<div>
+  <div *ngFor="let showI of imagesUrl">
+    <span *ngIf="showI.value">
+      <img src="{{showI.url}}" style="height:150px">
+    </span>
+  </div>
+  <br/>
+</div>

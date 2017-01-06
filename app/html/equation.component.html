@@ -1,0 +1,23 @@
+<h2>My equations</h2>
+<div>
+<ul class="equations">
+  <li *ngFor="let equation of equations">
+    <span>{{equation.number1}}</span>  <span>{{equation.operator}}</span>   <span>{{equation.number2}}</span> =
+    <input [(ngModel)]="equation.proposition" />
+    <br/><br/>
+  </li>
+</ul>
+</div>
+
+
+<div *ngIf="showResults">
+    <h2>Résultats:</h2>
+    <div>
+      <results [nbErrors]="nbErrors"></results>
+    </div>
+</div>
+
+<div>
+  <button (click)="check()">J'ai fini!</button>
+</div>
+
