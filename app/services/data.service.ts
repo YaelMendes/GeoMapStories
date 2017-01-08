@@ -30,6 +30,7 @@ export class DataService {
   getStories(): Story[] {
     var stories = [
       {description: "this is a short descr"},
+      {description: "this is another story"}
     ];
     return stories;
   }

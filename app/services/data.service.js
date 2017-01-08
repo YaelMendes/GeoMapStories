@@ -30,6 +30,7 @@ var DataService = (function () {
     DataService.prototype.getStories = function () {
         var stories = [
             { description: "this is a short descr" },
+            { description: "this is another story" }
         ];
         return stories;
     };
