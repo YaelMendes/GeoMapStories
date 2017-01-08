@@ -11,11 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var equation_component_1 = require('../equa/equation.component');
-var question_component_1 = require("../quest/question.component");
+var story_component_1 = require("../components/story.component");
 var routes = [
-    { path: '', redirectTo: '/questions', pathMatch: 'full' },
-    { path: 'questions', component: question_component_1.QuestionComponent },
+    { path: '', redirectTo: '/stories', pathMatch: 'full' },
     { path: 'equations', component: equation_component_1.EquationComponent },
+    { path: 'stories', component: story_component_1.StoryComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

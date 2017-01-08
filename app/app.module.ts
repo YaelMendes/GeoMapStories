@@ -14,8 +14,7 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppComponent }         from './app.component';
 import { DataService }          from './services/data.service';
 import { EquationComponent }    from './equa/equation.component';
-import { QuestionComponent }    from './quest/question.component';
-import { ResultComponent }      from "./equa/results.component";
+import {StoryComponent} from "./components/story.component";
 
 
 @NgModule({
@@ -29,8 +28,7 @@ import { ResultComponent }      from "./equa/results.component";
   declarations: [
     AppComponent,
     EquationComponent,
-    QuestionComponent,
-    ResultComponent,
+    StoryComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

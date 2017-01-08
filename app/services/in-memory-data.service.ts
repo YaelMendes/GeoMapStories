@@ -1,5 +1,4 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import {Question} from "../quest/question";
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

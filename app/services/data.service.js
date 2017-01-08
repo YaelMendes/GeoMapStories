@@ -15,7 +15,6 @@ var DataService = (function () {
     function DataService(http) {
         this.http = http;
         this.equationsUrl = 'api/equationsList'; // URL to web api
-        this.questionsUrl = 'api/questionsList'; // URL to web api
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     DataService.prototype.handleError = function (error) {
@@ -28,47 +27,11 @@ var DataService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    DataService.prototype.getEquation = function (id) {
-        var url = this.equationsUrl + "/" + id;
-        return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
-    };
-    DataService.prototype.getQuestions = function () {
-        var questions_ = [
-            { ask: "Bonjour, quel est ton prénom ?", answer: "Déborah" },
-            { ask: "Bonjour Déborah! Je suis content de te connaître, veux tu jouer avec moi ?", answer: "oui" },
-            { ask: "Parfait! tu dois te demander qui je suis? et bien je suis un programme créé par une personne que tu connais très bien, tu devines qui ?", answer: "papa" },
-            { ask: "Excellent! je connais beaucoup de chose! par exemple je sais que tu as un frère qui s'appelle Ethan, est-ce vrai ?", answer: "oui" },
-            { ask: "Et oui je sais tout de toi! même ton âge! regarde: Dis moi ton âge", answer: "5 ans" },
-            { ask: "Je le savais! au fait c'était bien la partie de Concept ? tu as joué avec Ethan et...(écris son nom)", answer: "papi" },
-            { ask: "et oui!  je sais aussi que tu aimes bien les problèmes...tu veux en faire ?", answer: "oui" },
-            { ask: "ok on va en faire, mais d'abord une dernière énigme, comment s'appelle ta maman ?", answer: "charlotte" },
-            { ask: "Bravo ! c'est fini pour les questions, on commence les problèmes ?", answer: "oui" },
+    DataService.prototype.getStories = function () {
+        var stories = [
+            { description: "this is a short descr" },
         ];
-        // for test only
-        /*  questions_ = [
-            {ask: "Bonjour, quel est ton prénom ?", answer: "dd"},
-            {ask: "Bonjour ent de te connaître, veux tu jouer avec moi ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"},
-            {ask: "Bonjour  ?", answer: "dd"}];*/
-        questions_ = [
-            { ask: "Bonjour, quel est ton prénom ?", answer: "Ethan" },
-            { ask: "Bonjour Ethan! Je suis content de te connaître, veux tu jouer avec moi ?", answer: "oui" },
-            { ask: "Parfait! tu dois te demander qui je suis? et bien je suis un programme créé par une personne que tu connais très bien, tu devines qui ?", answer: "papa" },
-            { ask: "Excellent! je connais beaucoup de chose! par exemple je sais que tu as une soeur qui s'appelle Déborah, est-ce vrai ?", answer: "oui" },
-            { ask: "Et oui je sais tout de toi! même ton âge! regarde: Dis moi ton âge", answer: "5 ans" },
-            { ask: "Je le savais! au fait c'était bien la partie de Concept ? tu as joué avec Déborah et...(écris son nom)", answer: "papi" },
-            { ask: "et oui!  je sais aussi que tu aimes bien les problèmes...tu veux en faire ?", answer: "oui" },
-            { ask: "ok on va en faire, mais d'abord une dernière énigme, comment s'appelle ta maman ?", answer: "charlotte" },
-            { ask: "Bravo ! c'est fini pour les questions, on commence les problèmes ?", answer: "oui" },
-        ];
-        return questions_;
+        return stories;
     };
     DataService = __decorate([
         core_1.Injectable(), 
