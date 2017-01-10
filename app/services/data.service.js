@@ -14,25 +14,25 @@ require('rxjs/add/operator/toPromise');
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
-        this.equationsUrl = 'api/equationsList'; // URL to web api
+        this.storiesUrl = 'api/storiesList'; // URL to web api
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     DataService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    DataService.prototype.getEquations = function () {
-        return this.http.get(this.equationsUrl)
+    DataService.prototype.getStories = function () {
+        return this.http.get(this.storiesUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    DataService.prototype.getStories = function () {
-        var stories = [
-            { description: "this is a short descr" },
-            { description: "this is another story" }
-        ];
-        return stories;
+    DataService.prototype.createStory = function (description) {
+        return this.http
+            .post(this.storiesUrl, JSON.stringify({ description: description }), { headers: this.headers })
+            .toPromise()
+            .then(function (res) { return res.json().data; })
+            .catch(this.handleError);
     };
     DataService = __decorate([
         core_1.Injectable(), 

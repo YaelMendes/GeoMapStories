@@ -9,7 +9,7 @@ import {Story} from "../objects/story";
 @Injectable()
 export class DataService {
 
-  private equationsUrl = 'api/equationsList';  // URL to web api
+  private storiesUrl = 'api/storiesList';  // URL to web api
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -20,21 +20,18 @@ export class DataService {
     return Promise.reject(error.message || error);
   }
 
-  getEquations(): Promise<Equation[]> {
-    return this.http.get(this.equationsUrl)
+  getStories(): Promise<Story[]> {
+    return this.http.get(this.storiesUrl)
       .toPromise()
-      .then(response => response.json().data as Equation[])
+      .then(response => response.json().data as Story[])
       .catch(this.handleError);
   }
 
-  getStories(): Story[] {
-    var stories = [
-      {description: "this is a short descr"},
-      {description: "this is another story"}
-    ];
-    return stories;
+  createStory(description: string) {
+    return this.http
+      .post(this.storiesUrl, JSON.stringify({description: description}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data)
+      .catch(this.handleError);
   }
-
-
-
 }

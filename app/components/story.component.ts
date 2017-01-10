@@ -19,14 +19,24 @@ export class StoryComponent implements OnInit {
     private location: Location) {
   }
 
-  getStories(): void {
-    console.log('calling getStories....');
-    this.stories = this.dataService.getStories();
-  }
-
   ngOnInit(): void {
     this.getStories();
   }
+
+  getStories(): void {
+    console.log('calling getStories....');
+    this.dataService.getStories()
+      .then(stories => this.stories = stories);
+  }
+
+  addStory(description: string): void {
+    if (!description) { return; }
+    this.dataService.createStory(description)
+      .then(story => {
+        this.stories.push(story);
+      });
+  }
+
 
 
 }
