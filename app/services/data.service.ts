@@ -3,7 +3,6 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Equation } from '../equa/equation';
 import {Story} from "../objects/story";
 
 @Injectable()

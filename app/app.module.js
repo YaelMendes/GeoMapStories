@@ -19,7 +19,6 @@ var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./services/in-memory-data.service');
 var app_component_1 = require('./app.component');
 var data_service_1 = require('./services/data.service');
-var equation_component_1 = require('./equa/equation.component');
 var story_component_1 = require("./components/story.component");
 var AppModule = (function () {
     function AppModule() {
@@ -35,7 +34,6 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                equation_component_1.EquationComponent,
                 story_component_1.StoryComponent
             ],
             providers: [data_service_1.DataService],

@@ -1,4 +1,5 @@
 <h2>My stories</h2>
+
 <div>
 <ul>
   <li *ngFor="let story of stories">
@@ -8,4 +9,9 @@
 </ul>
 </div>
 
-
+<div>
+  <label>Story description:</label> <input #storyDescription />
+  <button (click)="addStory(storyDescription.value); storyDescription.value=''">
+    Add
+  </button>
+</div>

@@ -13,7 +13,6 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DataService }          from './services/data.service';
-import { EquationComponent }    from './equa/equation.component';
 import {StoryComponent} from "./components/story.component";
 
 
@@ -27,7 +26,6 @@ import {StoryComponent} from "./components/story.component";
   ],
   declarations: [
     AppComponent,
-    EquationComponent,
     StoryComponent
   ],
   providers: [ DataService ],
