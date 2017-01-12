@@ -4,9 +4,7 @@ var InMemoryDataService = (function () {
     }
     InMemoryDataService.prototype.createDb = function () {
         var storiesList = [
-            { description: "desccc" },
-            { description: "this is a short descr" },
-            { description: "this is another story" }
+            { description: "birth", begin: '1977-10-02' },
         ];
         return { storiesList: storiesList };
     };

@@ -31,5 +31,4 @@ import {StoryComponent} from "./components/story.component";
   providers: [ DataService ],
   bootstrap: [ AppComponent ]
 })
-
 export class AppModule { }

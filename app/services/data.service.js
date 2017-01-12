@@ -27,9 +27,9 @@ var DataService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    DataService.prototype.createStory = function (description) {
+    DataService.prototype.createStory = function (description, begin) {
         return this.http
-            .post(this.storiesUrl, JSON.stringify({ description: description }), { headers: this.headers })
+            .post(this.storiesUrl, JSON.stringify({ description: description, begin: begin }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);

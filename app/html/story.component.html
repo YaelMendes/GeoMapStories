@@ -1,17 +1,25 @@
-<h2>My stories</h2>
+<h2>Main stories page</h2>
 
 <div>
 <ul>
+  <label>stories list:</label>
   <li *ngFor="let story of stories">
+    <label>description: </label>
     <span>{{story.description}}</span>
+    <label>begin: </label>
+    <span>{{story.begin | date: 'dd/MM/yyyy' }}</span>
     <br/><br/>
   </li>
 </ul>
 </div>
 
+<br/>
+
 <div>
-  <label>Story description:</label> <input #storyDescription />
-  <button (click)="addStory(storyDescription.value); storyDescription.value=''">
+  <label>Add a story:</label>
+  <label>description: </label><input #description />
+  <label>begin: </label><input #begin />
+  <button (click)="addStory(description.value, begin.value)">
     Add
   </button>
 </div>

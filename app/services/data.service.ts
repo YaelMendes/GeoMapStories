@@ -26,9 +26,9 @@ export class DataService {
       .catch(this.handleError);
   }
 
-  createStory(description: string) {
+  createStory(description: string, begin: Date) {
     return this.http
-      .post(this.storiesUrl, JSON.stringify({description: description}), {headers: this.headers})
+      .post(this.storiesUrl, JSON.stringify({description: description, begin: begin}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
