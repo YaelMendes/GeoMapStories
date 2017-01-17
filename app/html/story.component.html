@@ -1,4 +1,5 @@
 <h2>Main stories page</h2>
+<br/>
 
 <div>
 <ul>
@@ -14,6 +15,12 @@
 </div>
 
 <br/>
+
+<div>
+  <h2>Basic Request</h2>
+  <div *ngIf="loading">loading...</div>
+  <pre>{{oneStoryTest | json}}</pre>
+</div>
 
 <div>
   <label>Add a story:</label>

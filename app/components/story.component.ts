@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 
 import { DataService } from '../services/data.service';
 import {Story} from "../objects/story";
+import {Http, Response} from "@angular/http";
+
 
 @Component({
   moduleId: module.id,
@@ -12,35 +14,38 @@ import {Story} from "../objects/story";
 })
 export class StoryComponent implements OnInit {
   stories: Story[];
-  newStory: Story;
+  oneStoryTest: Story;
+  loading: boolean;
 
   constructor(
     private router: Router,
     private dataService: DataService,
-    private location: Location) {
+    private location: Location,
+    public http: Http) {
   }
 
   ngOnInit(): void {
-    this.getStories();
+     this.retrieveStories();
+     this.retrieveOneStory();
   }
 
-  getStories(): void {
-    console.log('calling getStories....');
+  retrieveStories(): void {
+    console.log('calling retrieveStories....');
     this.dataService.getStories()
       .then(stories => this.stories = stories);
   }
 
-  addStory(description: string, begin: Date): void {
-    if (!description || !begin) { return; }
-    this.dataService.createStory3(description, begin)
-      .then(story => {
-        this.stories.push(story);
+  retrieveOneStory(): void {
+    this.http.request('http://localhost:8090/story/one')
+      .subscribe((res: Response) => {
+        this.oneStoryTest = res.json();
+        this.loading = false;
       });
   }
 
-  addStory2(story: Story): void {
-    if (!story.description || !story.begin) { return; }
-    this.dataService.createStory2(story)
+  addStory(description: string, begin: Date): void {
+    if (!description || !begin) { return; }
+    this.dataService.createStory(description, begin)
       .then(story => {
         this.stories.push(story);
       });

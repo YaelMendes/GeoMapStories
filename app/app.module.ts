@@ -21,12 +21,12 @@ import {StoryComponent} from "./components/story.component";
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true}),
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    StoryComponent
+    StoryComponent,
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

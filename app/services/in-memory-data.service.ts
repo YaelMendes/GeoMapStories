@@ -5,8 +5,8 @@ export class InMemoryDataService implements InMemoryDbService {
 
     let storiesList = [
       {description: "birth", begin: '1977-10-02'},
-   /*   {description: "this is a short descr"},
-      {description: "this is another story"}*/
+      {description: "this is a short descr"},
+      {description: "this is another story"}
     ];
     return {storiesList};
   }

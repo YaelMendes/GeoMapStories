@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import {Headers, Http, Response} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -12,7 +12,7 @@ export class DataService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http: Http) { }
+  constructor(public http: Http) { }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
@@ -26,6 +26,10 @@ export class DataService {
       .catch(this.handleError);
   }
 
+  data: Object;
+  loading: boolean;
+
+
   createStory(description: string, begin: Date) {
     return this.http
       .post(this.storiesUrl, JSON.stringify({description: description, begin: begin}), {headers: this.headers})
@@ -33,4 +37,7 @@ export class DataService {
       .then(res => res.json().data)
       .catch(this.handleError);
   }
+
+
+
 }
