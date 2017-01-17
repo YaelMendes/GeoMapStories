@@ -8,7 +8,8 @@ import {Story} from "../objects/story";
 @Injectable()
 export class DataService {
 
-  private storiesUrl = 'api/storiesList';  // URL to web api
+  private storiesUrlTest = 'api/storiesList';  // URL to web api
+  private storiesUrl = 'http://localhost:8090';  // URL to web api
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -20,35 +21,24 @@ export class DataService {
   }
 
   getStories(): Promise<Story[]> {
-    return this.http.get(this.storiesUrl)
+    return this.http.get('http://localhost:8090/story/all')
       .toPromise()
-      .then(response => response.json().data as Story[])
+      .then(response => response.json() as Story[])
       .catch(this.handleError);
   }
 
-  oneStoryTest: Story;
-  getOneStory(): Story {
-    this.http.request('http://localhost:8090/story/one')
-      .subscribe((res: Response) => {
-        this.oneStoryTest = res.json();
-        console.log('-----calling oneStoryTest des= '+ this.oneStoryTest.description);
-        console.log('-----calling oneStoryTest beg= '+ this.oneStoryTest.begin);
-        this.loading = false;
-      });
-
-   /* let st = new Story (this.oneStoryTest.description,  this.oneStoryTest.begin);
-    console.log('calling oneStoryTest= '+  st);*/
-    return this.oneStoryTest;
+  getOneStory(): Promise<Story> {
+    return this.http.get('http://localhost:8090/story/one')
+      .toPromise()
+      .then(response => response.json() as Story)
+      .catch(this.handleError);
   }
-
-  data: Object;
-  loading: boolean;
 
   createStory(description: string, begin: Date) {
     return this.http
-      .post(this.storiesUrl, JSON.stringify({description: description, begin: begin}), {headers: this.headers})
+      .post('http://localhost:8090/story/insert', JSON.stringify({description: description, begin: begin}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data)
+      .then(res => res.json() as Story)
       .catch(this.handleError);
   }
 

@@ -5,11 +5,11 @@
 <ul>
   <label>stories list:</label><br/>
   <li *ngFor="let story of stories">
-    <label>description: </label>
-    <span>{{story.description}}</span>
-    <label>begin: </label>
-    <!--<span>{{story.begin.dayOfMonth}} {{story.begin.month }} {{story.begin.year}}</span>-->
-    <span>{{story.begin | date: 'dd/MM/yyyy' }}</span>
+    <label>id: </label><span>{{story.id}}</span>
+    <label>description: </label><span>{{story.description}}</span>
+  <!--<span>{{story.begin.dayOfMonth}} {{story.begin.month }} {{story.begin.year}}</span>-->
+    <!--<label>begin: </label><span>{{story.begin | date: 'dd/MM/yyyy' }}</span>-->
+    <label>begin: </label><span>{{story.begin}}</span>
     <br/>
   </li>
 </ul>

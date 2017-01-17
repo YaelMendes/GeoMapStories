@@ -29,30 +29,15 @@ export class StoryComponent implements OnInit {
   }
 
   retrieveAllStories(): void {
-    console.log('calling retrieveStories....');
     this.dataService.getStories()
       .then(stories => this.stories = stories);
+    console.log('calling retrieveStories....:'+this.stories);
   }
 
- /* retrieveOneStory(): void {
-    console.log('calling retrieveOneStory....');
-    this.oneStoryTest = this.dataService.getOneStory();
-  }*/
-
-/*  retrieveAllStories(): void {
-    this.http.request('http://localhost:8090/story/all')
-      .subscribe((res: Response) => {
-        this.stories = res.json();
-        this.loading = false;
-      });
-  }*/
-
   retrieveOneStory(): void {
-    this.http.request('http://localhost:8090/story/one')
-      .subscribe((res: Response) => {
-        this.oneStoryTest = res.json();
-        this.loading = false;
-      });
+    this.dataService.getOneStory()
+      .then(stori => this.oneStoryTest = stori);
+    console.log('calling retrieveOneStory....:'+this.oneStoryTest);
   }
 
   addStory(description: string, begin: Date): void {
