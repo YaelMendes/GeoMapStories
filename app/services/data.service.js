@@ -27,6 +27,19 @@ var DataService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
+    DataService.prototype.getOneStory = function () {
+        var _this = this;
+        this.http.request('http://localhost:8090/story/one')
+            .subscribe(function (res) {
+            _this.oneStoryTest = res.json();
+            console.log('-----calling oneStoryTest des= ' + _this.oneStoryTest.description);
+            console.log('-----calling oneStoryTest beg= ' + _this.oneStoryTest.begin);
+            _this.loading = false;
+        });
+        /* let st = new Story (this.oneStoryTest.description,  this.oneStoryTest.begin);
+         console.log('calling oneStoryTest= '+  st);*/
+        return this.oneStoryTest;
+    };
     DataService.prototype.createStory = function (description, begin) {
         return this.http
             .post(this.storiesUrl, JSON.stringify({ description: description, begin: begin }), { headers: this.headers })

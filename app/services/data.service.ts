@@ -26,9 +26,23 @@ export class DataService {
       .catch(this.handleError);
   }
 
+  oneStoryTest: Story;
+  getOneStory(): Story {
+    this.http.request('http://localhost:8090/story/one')
+      .subscribe((res: Response) => {
+        this.oneStoryTest = res.json();
+        console.log('-----calling oneStoryTest des= '+ this.oneStoryTest.description);
+        console.log('-----calling oneStoryTest beg= '+ this.oneStoryTest.begin);
+        this.loading = false;
+      });
+
+   /* let st = new Story (this.oneStoryTest.description,  this.oneStoryTest.begin);
+    console.log('calling oneStoryTest= '+  st);*/
+    return this.oneStoryTest;
+  }
+
   data: Object;
   loading: boolean;
-
 
   createStory(description: string, begin: Date) {
     return this.http

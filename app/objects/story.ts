@@ -5,4 +5,8 @@ export class Story {
   begin: Date;
   /* end: Date;
    address: Address; */
+
+  constructor(description: string, begin: Date)
+  {}
+
 }

@@ -6,7 +6,6 @@ import { DataService } from '../services/data.service';
 import {Story} from "../objects/story";
 import {Http, Response} from "@angular/http";
 
-
 @Component({
   moduleId: module.id,
   selector: 'my-stories',
@@ -25,15 +24,28 @@ export class StoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.retrieveStories();
+     this.retrieveAllStories();
      this.retrieveOneStory();
   }
 
-  retrieveStories(): void {
+  retrieveAllStories(): void {
     console.log('calling retrieveStories....');
     this.dataService.getStories()
       .then(stories => this.stories = stories);
   }
+
+ /* retrieveOneStory(): void {
+    console.log('calling retrieveOneStory....');
+    this.oneStoryTest = this.dataService.getOneStory();
+  }*/
+
+/*  retrieveAllStories(): void {
+    this.http.request('http://localhost:8090/story/all')
+      .subscribe((res: Response) => {
+        this.stories = res.json();
+        this.loading = false;
+      });
+  }*/
 
   retrieveOneStory(): void {
     this.http.request('http://localhost:8090/story/one')
