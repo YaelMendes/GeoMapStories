@@ -5,7 +5,6 @@
 <ul>
   <label>stories list:</label><br/>
   <li *ngFor="let story of stories">
-    <label>id: </label><span>{{story.id}}</span>
     <label>description: </label><span>{{story.description}}</span>
   <!--<span>{{story.begin.dayOfMonth}} {{story.begin.month }} {{story.begin.year}}</span>-->
     <!--<label>begin: </label><span>{{story.begin | date: 'dd/MM/yyyy' }}</span>-->
@@ -16,12 +15,6 @@
 </div>
 <br/>
 
-<div>
-  <h2>Basic Request</h2>
-  <div *ngIf="loading">loading...</div>
-  <pre>{{oneStoryTest | json}}</pre>
-</div>
-<br/>
 
 <div>
   <label>Add a story:</label>
@@ -31,3 +24,9 @@
     Add
   </button>
 </div>
+
+<!--<div>
+  <h2> &#45;&#45; Sandbox component &#45;&#45;</h2>
+  <sandbox>sandbox.</sandbox>
+</div>
+<br/>-->
