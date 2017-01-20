@@ -13,6 +13,8 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppComponent }         from './app.component';
 import { DataService }          from './services/data.service';
 import {StoryComponent} from "./components/story.component";
+import {StoryListComponent} from "./components/stories-list.component";
+import {StoryAddComponent} from "./components/story-add.component";
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import {StoryComponent} from "./components/story.component";
   declarations: [
     AppComponent,
     StoryComponent,
+    StoryListComponent,
+    StoryAddComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

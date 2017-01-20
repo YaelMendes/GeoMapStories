@@ -1,32 +1,8 @@
 <h2>Main stories page</h2>
 <br/>
 
-<div>
-<ul>
-  <label>stories list:</label><br/>
-  <li *ngFor="let story of stories">
-    <label>description: </label><span>{{story.description}}</span>
-  <!--<span>{{story.begin.dayOfMonth}} {{story.begin.month }} {{story.begin.year}}</span>-->
-    <!--<label>begin: </label><span>{{story.begin | date: 'dd/MM/yyyy' }}</span>-->
-    <label>begin: </label><span>{{story.begin}}</span>
-    <br/>
-  </li>
-</ul>
-</div>
+<add-story [stories]="stories"></add-story>
 <br/>
 
-
-<div>
-  <label>Add a story:</label>
-  <label>description: </label><input #description />
-  <label>begin: </label><input #begin />
-  <button (click)="addStory(description.value, begin.value)">
-    Add
-  </button>
-</div>
-
-<!--<div>
-  <h2> &#45;&#45; Sandbox component &#45;&#45;</h2>
-  <sandbox>sandbox.</sandbox>
-</div>
-<br/>-->
+<all-stories [allStories]="stories"></all-stories>
+<br/>

@@ -19,6 +19,8 @@ var in_memory_data_service_1 = require('./services/in-memory-data.service');
 var app_component_1 = require('./app.component');
 var data_service_1 = require('./services/data.service');
 var story_component_1 = require("./components/story.component");
+var stories_list_component_1 = require("./components/stories-list.component");
+var story_add_component_1 = require("./components/story-add.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,6 +36,8 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 story_component_1.StoryComponent,
+                stories_list_component_1.StoryListComponent,
+                story_add_component_1.StoryAddComponent
             ],
             providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]
