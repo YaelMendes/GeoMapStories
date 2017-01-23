@@ -21,6 +21,7 @@ var data_service_1 = require('./services/data.service');
 var story_component_1 = require("./components/story.component");
 var stories_list_component_1 = require("./components/stories-list.component");
 var story_add_component_1 = require("./components/story-add.component");
+var test_one_story_component_1 = require("./components/test-one-story.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +38,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 story_component_1.StoryComponent,
                 stories_list_component_1.StoryListComponent,
-                story_add_component_1.StoryAddComponent
+                story_add_component_1.StoryAddComponent,
+                test_one_story_component_1.MyTestStoryComponent
             ],
             providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]

@@ -11,8 +11,9 @@ import {Http} from "@angular/http";
     <div>
       <label>Add a story:</label>
       <label>description: </label><input #description />
+      <label>address: </label><input #address />
       <label>begin: </label><input #begin />
-      <button (click)="addStory(description.value, begin.value)">
+      <button (click)="addStory(description.value, address.value, begin.value)">
       Add
       </button>
     </div>
@@ -31,9 +32,9 @@ export class StoryAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addStory(description: string, begin: Date): void {
+  addStory(description: string, address: string, begin: Date): void {
     if (!description || !begin) { return; }
-    this.dataService.createStory(description, begin)
+    this.dataService.createStory(description, address, begin)
       .then(story => {
         this.stories.push(story);
       });

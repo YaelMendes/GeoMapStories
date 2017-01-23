@@ -34,9 +34,13 @@ export class DataService {
       .catch(this.handleError);
   }
 
-  createStory(description: string, begin: Date) {
+  createStory(description: string, address: string, begin: Date) {
     return this.http
-      .post('http://localhost:8090/story/insert', JSON.stringify({description: description, begin: begin}), {headers: this.headers})
+      .post(
+        'http://localhost:8090/story/insert',
+        JSON.stringify({description: description, address: address, begin: begin}),
+        {headers: this.headers}
+        )
       .toPromise()
       .then(res => res.json() as Story)
       .catch(this.handleError);

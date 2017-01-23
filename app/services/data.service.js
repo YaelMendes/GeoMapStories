@@ -34,9 +34,9 @@ var DataService = (function () {
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    DataService.prototype.createStory = function (description, begin) {
+    DataService.prototype.createStory = function (description, address, begin) {
         return this.http
-            .post('http://localhost:8090/story/insert', JSON.stringify({ description: description, begin: begin }), { headers: this.headers })
+            .post('http://localhost:8090/story/insert', JSON.stringify({ description: description, address: address, begin: begin }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);

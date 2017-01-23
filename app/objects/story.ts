@@ -4,10 +4,10 @@ export class Story {
   id: string;
   description: string;
   begin: Date;
-  /* end: Date;
-   address: Address; */
+  /* end: Date; */
+   address: string;
 
-  constructor(description: string, begin: Date)
+  constructor(description: string, address: string, begin: Date)
   {}
 
 }
