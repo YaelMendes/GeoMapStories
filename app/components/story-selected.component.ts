@@ -15,7 +15,7 @@ import {Http} from "@angular/http";
      <label>selected story:</label><br/>
       <label>oneStory description: </label><span>{{selectedStory?.description}}</span>
       <label>oneStory address: </label><span>{{selectedStory?.address.firstLine}}</span>
-      <label>oneStory begin: </label><span>{{selectedStory?.begin}}</span>
+      <label>oneStory begin: </label><span>{{selectedStory?.begin | date:'d MMMM y'}}</span>
        <br/>
      </div>
     `,

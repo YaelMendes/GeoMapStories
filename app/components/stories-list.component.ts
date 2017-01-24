@@ -12,7 +12,7 @@ import {Http} from "@angular/http";
      <li *ngFor="let story of allStories">
        <label>description: </label><span>{{story.description}}</span>
         <label>address: </label><span>{{story.address.firstLine}}</span>
-       <label>begin: </label><span>{{story.begin}}</span>
+       <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>
        <br/>
      </li>
      </div>
