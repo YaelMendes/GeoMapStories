@@ -13,29 +13,16 @@ export class DataService {
 
   constructor(public http: Http) { }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
-
-  getStories(): Promise<Story[]> {
-    return this.http.get('http://localhost:8090/story/all')
-      .toPromise()
-      .then(response => response.json() as Story[])
-      .catch(this.handleError);
-  }
-
   getObservableStories() : Observable<Story[]>{
     return this.http.get('http://localhost:8090/story/all')
       .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+      .catch(DataService.handleObservableError());
   }
 
-  getOneStory(): Promise<Story> {
+  getOneObservableStory() : Observable<Story>{
     return this.http.get('http://localhost:8090/story/one')
-      .toPromise()
-      .then(response => response.json() as Story)
-      .catch(this.handleError);
+      .map((res:Response) => res.json())
+      .catch(DataService.handleObservableError());
   }
 
   createStory(description: string, address: string, begin: Date) {
@@ -47,8 +34,17 @@ export class DataService {
         )
       .toPromise()
       .then(res => res.json() as Story)
-      .catch(this.handleError);
+      .catch(DataService.handleError);
   }
 
+
+  private static handleObservableError() {
+    return (error: any) => Observable.throw(error.json().error || 'Server error');
+  }
+
+  private static handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
 
 }

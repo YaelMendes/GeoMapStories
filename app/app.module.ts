@@ -15,6 +15,7 @@ import { DataService }          from './services/data.service';
 import {StoryComponent} from "./components/story.component";
 import {StoryListComponent} from "./components/stories-list.component";
 import {StoryAddComponent} from "./components/story-add.component";
+import {ShowStoryComponent} from "./components/story-selected.component";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {StoryAddComponent} from "./components/story-add.component";
     StoryComponent,
     StoryListComponent,
     StoryAddComponent,
+    ShowStoryComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

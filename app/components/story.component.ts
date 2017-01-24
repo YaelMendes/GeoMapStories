@@ -11,6 +11,7 @@ import {Http} from "@angular/http";
 })
 export class StoryComponent implements OnInit {
   stories: Story[];
+  story: Story;
 
   constructor(
     private dataService: DataService,
@@ -18,21 +19,19 @@ export class StoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.retrieveOneObservableStories();
     this.retrieveObservableStories();
   }
 
-/*  retrieveStories(): void {
-    this.dataService.getStories()
-      .then(stories => this.stories = stories);
-    console.log('calling retrieveStories....:'+this.stories);
-  }*/
-
   retrieveObservableStories(){
     this.dataService.getObservableStories()
-      .subscribe(
-        stories => this.stories = stories, //Bind to view
-        err => { console.log(err);
-        });
+      .subscribe(stories => this.stories = stories, err => { console.log(err);});
+    console.log('calling retrieveStories....:'+this.stories);
+  }
+
+  retrieveOneObservableStories(){
+    this.dataService.getOneObservableStory()
+      .subscribe(stories => this.story = stories, err => { console.log(err);});
   }
 
 }

@@ -17,33 +17,29 @@ var DataService = (function () {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
-    DataService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    };
-    DataService.prototype.getStories = function () {
-        return this.http.get('http://localhost:8090/story/all')
-            .toPromise()
-            .then(function (response) { return response.json(); })
-            .catch(this.handleError);
-    };
     DataService.prototype.getObservableStories = function () {
         return this.http.get('http://localhost:8090/story/all')
             .map(function (res) { return res.json(); })
-            .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
+            .catch(DataService.handleObservableError());
     };
-    DataService.prototype.getOneStory = function () {
+    DataService.prototype.getOneObservableStory = function () {
         return this.http.get('http://localhost:8090/story/one')
-            .toPromise()
-            .then(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .map(function (res) { return res.json(); })
+            .catch(DataService.handleObservableError());
     };
     DataService.prototype.createStory = function (description, address, begin) {
         return this.http
             .post('http://localhost:8090/story/insert', JSON.stringify({ description: description, address: address, begin: begin }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
-            .catch(this.handleError);
+            .catch(DataService.handleError);
+    };
+    DataService.handleObservableError = function () {
+        return function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); };
+    };
+    DataService.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     };
     DataService = __decorate([
         core_1.Injectable(), 
