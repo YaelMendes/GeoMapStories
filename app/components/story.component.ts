@@ -18,13 +18,21 @@ export class StoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.retrieveStories();
+    this.retrieveObservableStories();
   }
 
-  retrieveStories(): void {
+/*  retrieveStories(): void {
     this.dataService.getStories()
       .then(stories => this.stories = stories);
     console.log('calling retrieveStories....:'+this.stories);
+  }*/
+
+  retrieveObservableStories(){
+    this.dataService.getObservableStories()
+      .subscribe(
+        stories => this.stories = stories, //Bind to view
+        err => { console.log(err);
+        });
   }
 
 }

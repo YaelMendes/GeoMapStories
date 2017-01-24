@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
+var Rx_1 = require("rxjs/Rx");
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
@@ -25,6 +26,11 @@ var DataService = (function () {
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
+    };
+    DataService.prototype.getObservableStories = function () {
+        return this.http.get('http://localhost:8090/story/all')
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
     };
     DataService.prototype.getOneStory = function () {
         return this.http.get('http://localhost:8090/story/one')

@@ -2,6 +2,7 @@ import { Injectable }    from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import {Observable} from "rxjs/Rx";
 
 import {Story} from "../objects/story";
 
@@ -22,6 +23,12 @@ export class DataService {
       .toPromise()
       .then(response => response.json() as Story[])
       .catch(this.handleError);
+  }
+
+  getObservableStories() : Observable<Story[]>{
+    return this.http.get('http://localhost:8090/story/all')
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getOneStory(): Promise<Story> {
