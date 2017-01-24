@@ -15,7 +15,6 @@ import { DataService }          from './services/data.service';
 import {StoryComponent} from "./components/story.component";
 import {StoryListComponent} from "./components/stories-list.component";
 import {StoryAddComponent} from "./components/story-add.component";
-import {MyTestStoryComponent} from "./components/test-one-story.component";
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import {MyTestStoryComponent} from "./components/test-one-story.component";
     StoryComponent,
     StoryListComponent,
     StoryAddComponent,
-    MyTestStoryComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

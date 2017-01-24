@@ -14,8 +14,6 @@ require('rxjs/add/operator/toPromise');
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
-        this.storiesUrlTest = 'api/storiesList'; // URL to web api
-        this.storiesUrl = 'http://localhost:8090'; // URL to web api
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     DataService.prototype.handleError = function (error) {

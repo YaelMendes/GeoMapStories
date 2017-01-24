@@ -8,9 +8,6 @@ import {Story} from "../objects/story";
 @Injectable()
 export class DataService {
 
-  private storiesUrlTest = 'api/storiesList';  // URL to web api
-  private storiesUrl = 'http://localhost:8090';  // URL to web api
-
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(public http: Http) { }
@@ -45,7 +42,6 @@ export class DataService {
       .then(res => res.json() as Story)
       .catch(this.handleError);
   }
-
 
 
 }
