@@ -2,7 +2,7 @@ import './rxjs-extensions';
 
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './routing/app-routing.module';
@@ -22,6 +22,7 @@ import {ShowStoryComponent} from "./components/story-selected.component";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true}),
     AppRoutingModule

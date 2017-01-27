@@ -13,13 +13,13 @@ export class DataService {
 
   constructor(public http: Http) { }
 
-  getObservableStories() : Observable<Story[]>{
+  getObservableStories() : Observable<Story[]> {
     return this.http.get('http://localhost:8090/story/all')
       .map((res:Response) => res.json())
       .catch(DataService.handleObservableError());
   }
 
-  getOneObservableStory() : Observable<Story>{
+  getOneObservableStory() : Observable<Story> {
     return this.http.get('http://localhost:8090/story/one')
       .map((res:Response) => res.json())
       .catch(DataService.handleObservableError());
@@ -36,7 +36,6 @@ export class DataService {
       .then(res => res.json() as Story)
       .catch(DataService.handleError);
   }
-
 
   private static handleObservableError() {
     return (error: any) => Observable.throw(error.json().error || 'Server error');
