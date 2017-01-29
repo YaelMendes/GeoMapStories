@@ -1,29 +1,18 @@
 import { Component } from '@angular/core';
+import {Story} from "../objects/story";
 
 @Component({
-  selector: 'demo-form-sku',
-  template: `
-     <div class="ui raised segment">
-      <h2 class="ui header">Demo Form: Sku</h2>
-      <form #f="ngForm"
-          (ngSubmit)="onSubmit(f.value)"
-          class="ui form">
-
-           <div class="field">
-           <label for="skuInput">SKU</label>
-           <input  type="text"
-                   id="skuInput"
-                   placeholder="SKU"
-                   name="sku" ngModel>
-           </div>
-          
-           <button type="submit" class="ui button">Submit</button>
-           </form>
-       </div>
- `
+  moduleId: module.id,
+  selector: 'story-add-form',
+  templateUrl: '../html/story-add-form.component.html'
 })
-export class DemoFormSku {
-  onSubmit(form: any): void {
-    console.log('you submitted value:', form);
+export class AddStoryFormComponent {
+
+  model = new Story("my desss", 'my addrersrsr', new Date())
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
   }
+
 }
