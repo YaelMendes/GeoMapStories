@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import {Headers, Http, Response} from '@angular/http';
+import {Headers, Http, Response, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 import {Observable} from "rxjs/Rx";
@@ -25,16 +25,14 @@ export class DataService {
       .catch(DataService.handleObservableError());
   }
 
-  createStory(description: string, address: string, begin: Date) {
-    return this.http
-      .post(
-        'http://localhost:8090/story/insert',
-        JSON.stringify({description: description, address: address, begin: begin}),
-        {headers: this.headers}
-        )
-      .toPromise()
-      .then(res => res.json() as Story)
-      .catch(DataService.handleError);
+  addObsStory (story: Story): Observable<Story> {
+    console.log('daaaaa  story', story);
+    return this.http.post('http://localhost:8090/story/insert',
+      story ,
+      {headers: this.headers}
+      )
+      .map((res:Response) => res.json())
+      .catch(DataService.handleObservableError());
   }
 
   private static handleObservableError() {

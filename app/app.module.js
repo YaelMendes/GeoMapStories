@@ -20,7 +20,6 @@ var app_component_1 = require('./app.component');
 var data_service_1 = require('./services/data.service');
 var story_component_1 = require("./components/story.component");
 var stories_list_component_1 = require("./components/stories-list.component");
-var story_add_component_1 = require("./components/story-add.component");
 var story_selected_component_1 = require("./components/story-selected.component");
 var story_add_form_component_1 = require("./components/story-add-form.component");
 var AppModule = (function () {
@@ -40,9 +39,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 story_component_1.StoryComponent,
                 stories_list_component_1.StoryListComponent,
-                story_add_component_1.StoryAddComponent,
                 story_selected_component_1.ShowStoryComponent,
-                story_add_form_component_1.AddStoryFormComponent
+                story_add_form_component_1.StoryAddFormComponent
             ],
             providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]

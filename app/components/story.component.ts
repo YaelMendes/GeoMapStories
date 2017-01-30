@@ -31,7 +31,10 @@ export class StoryComponent implements OnInit {
 
   retrieveOneObservableStories(){
     this.dataService.getOneObservableStory()
-      .subscribe(stories => this.story = stories, err => { console.log(err);});
+      .subscribe(
+          story => {this.story = story; },
+          err => { console.log(err);}
+        );
   }
 
 }

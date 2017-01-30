@@ -27,12 +27,11 @@ var DataService = (function () {
             .map(function (res) { return res.json(); })
             .catch(DataService.handleObservableError());
     };
-    DataService.prototype.createStory = function (description, address, begin) {
-        return this.http
-            .post('http://localhost:8090/story/insert', JSON.stringify({ description: description, address: address, begin: begin }), { headers: this.headers })
-            .toPromise()
-            .then(function (res) { return res.json(); })
-            .catch(DataService.handleError);
+    DataService.prototype.addObsStory = function (story) {
+        console.log('daaaaa  story', story);
+        return this.http.post('http://localhost:8090/story/insert', story, { headers: this.headers })
+            .map(function (res) { return res.json(); })
+            .catch(DataService.handleObservableError());
     };
     DataService.handleObservableError = function () {
         return function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); };
