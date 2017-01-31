@@ -15,7 +15,8 @@ export class DataService {
 
   getNumberStories() : Observable<number> {
     return this.http.get('http://localhost:8090/story/all/count')
-      .map((res: Response) => res.json() as number)
+      //.map((res: Response) => res.json() as number)
+      .map(res => res.json() as number)
       .catch(DataService.handleObservableError());
   }
 

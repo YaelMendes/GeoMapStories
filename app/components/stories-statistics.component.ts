@@ -27,8 +27,8 @@ export class StatisticsComponent implements OnInit {
   computeNumbers(): void {
      this.dataService.getNumberStories()
        .subscribe(
-         numbSt => {this.storiesNumber = numbSt; },
-         err => { console.log(err);}
+         numbSt => this.storiesNumber = numbSt,
+         err => console.log(err)
        )
   }
 
