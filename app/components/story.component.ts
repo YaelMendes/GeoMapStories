@@ -37,7 +37,7 @@ export class StoryComponent implements OnInit {
   }
 
   gotoStatistics(): void {
-    this.router.navigate(['/statistics']);
+    this.router.navigate(['/statisticsPath']);
   }
 
 }

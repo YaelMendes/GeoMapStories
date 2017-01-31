@@ -15,7 +15,7 @@ var stories_statistics_component_1 = require("../components/stories-statistics.c
 var routes = [
     { path: '', redirectTo: '/stories', pathMatch: 'full' },
     { path: 'stories', component: story_component_1.StoryComponent },
-    { path: 'statistics', component: stories_statistics_component_1.StatisticsComponent }
+    { path: 'statisticsPath', component: stories_statistics_component_1.StatisticsComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

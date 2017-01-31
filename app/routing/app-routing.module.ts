@@ -7,7 +7,7 @@ import {StatisticsComponent} from "../components/stories-statistics.component";
 const routes: Routes = [
   { path: '', redirectTo: '/stories', pathMatch: 'full' },
   { path: 'stories',     component: StoryComponent },
-  { path: 'statistics',  component: StatisticsComponent }
+  { path: 'statisticsPath',  component: StatisticsComponent }
 ];
 
 @NgModule({
