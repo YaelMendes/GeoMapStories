@@ -13,6 +13,12 @@ export class DataService {
 
   constructor(public http: Http) { }
 
+  getNumberStories() : Observable<number> {
+    return this.http.get('http://localhost:8090/story/all/count')
+      .map((res: Response) => res.json() as number)
+      .catch(DataService.handleObservableError());
+  }
+
   getObservableStories() : Observable<Story[]> {
     return this.http.get('http://localhost:8090/story/all')
       .map((res:Response) => res.json())
@@ -26,7 +32,6 @@ export class DataService {
   }
 
   addObsStory (story: Story): Observable<Story> {
-    console.log('daaaaa  story', story);
     return this.http.post('http://localhost:8090/story/insert',
       story ,
       {headers: this.headers}

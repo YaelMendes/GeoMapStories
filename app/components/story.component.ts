@@ -13,9 +13,7 @@ export class StoryComponent implements OnInit {
   stories: Story[];
   story: Story;
 
-  constructor(
-    private dataService: DataService,
-    public http: Http) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {

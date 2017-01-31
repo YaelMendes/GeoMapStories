@@ -22,6 +22,7 @@ var story_component_1 = require("./components/story.component");
 var stories_list_component_1 = require("./components/stories-list.component");
 var story_selected_component_1 = require("./components/story-selected.component");
 var story_add_form_component_1 = require("./components/story-add-form.component");
+var stories_statistics_component_1 = require("./components/stories-statistics.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,8 @@ var AppModule = (function () {
                 story_component_1.StoryComponent,
                 stories_list_component_1.StoryListComponent,
                 story_selected_component_1.ShowStoryComponent,
-                story_add_form_component_1.StoryAddFormComponent
+                story_add_form_component_1.StoryAddFormComponent,
+                stories_statistics_component_1.StatisticsComponent
             ],
             providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]

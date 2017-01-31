@@ -17,6 +17,11 @@ var DataService = (function () {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
+    DataService.prototype.getNumberStories = function () {
+        return this.http.get('http://localhost:8090/story/all/count')
+            .map(function (res) { return res.json(); })
+            .catch(DataService.handleObservableError());
+    };
     DataService.prototype.getObservableStories = function () {
         return this.http.get('http://localhost:8090/story/all')
             .map(function (res) { return res.json(); })
@@ -28,7 +33,6 @@ var DataService = (function () {
             .catch(DataService.handleObservableError());
     };
     DataService.prototype.addObsStory = function (story) {
-        console.log('daaaaa  story', story);
         return this.http.post('http://localhost:8090/story/insert', story, { headers: this.headers })
             .map(function (res) { return res.json(); })
             .catch(DataService.handleObservableError());

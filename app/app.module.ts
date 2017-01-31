@@ -16,6 +16,7 @@ import {StoryComponent} from "./components/story.component";
 import {StoryListComponent} from "./components/stories-list.component";
 import {ShowStoryComponent} from "./components/story-selected.component";
 import {StoryAddFormComponent} from "./components/story-add-form.component";
+import {StatisticsComponent} from "./components/stories-statistics.component";
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {StoryAddFormComponent} from "./components/story-add-form.component";
     StoryComponent,
     StoryListComponent,
     ShowStoryComponent,
-    StoryAddFormComponent
+    StoryAddFormComponent,
+    StatisticsComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]
