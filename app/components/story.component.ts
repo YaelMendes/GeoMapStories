@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import {Story} from "../objects/story";
 import {Http} from "@angular/http";
+import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
@@ -13,7 +14,7 @@ export class StoryComponent implements OnInit {
   stories: Story[];
   story: Story;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,6 +34,10 @@ export class StoryComponent implements OnInit {
           story => {this.story = story; },
           err => { console.log(err);}
         );
+  }
+
+  gotoStatistics(): void {
+    this.router.navigate(['/statistics']);
   }
 
 }

@@ -3,6 +3,7 @@
  */
 import {Component, OnInit} from "@angular/core";
 import {DataService} from "../services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
@@ -11,11 +12,12 @@ import {DataService} from "../services/data.service";
              <div>
                 <label>number of stories: </label><span>{{ storiesNumber }}</span>
              </div>
+             <button (click)="gotoMainStories()">Main menu</button>
             `
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,6 +32,10 @@ export class StatisticsComponent implements OnInit {
          numbSt => this.storiesNumber = numbSt,
          err => console.log(err)
        )
+  }
+
+  gotoMainStories(): void {
+    this.router.navigate(['/stories']);
   }
 
 }
