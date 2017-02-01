@@ -12,4 +12,8 @@ describe('QuickStart E2E Tests', function () {
     expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
   });
 
+  describe('1st tests', () => {
+    it('true is true', () => expect(false).toBe(true));
+  });
+
 });

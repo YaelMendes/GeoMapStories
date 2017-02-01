@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Story} from "../objects/story";
 import {DataService} from "../services/data.service";
+import {AppSettings} from "../AppSettings";
 
 @Component({
   moduleId: module.id,
@@ -9,6 +10,8 @@ import {DataService} from "../services/data.service";
 })
 export class StoryAddFormComponent {
   @Input() stories: Story[];
+
+  title = AppSettings.ADD_STORY_FORM_TITLE;
 
   submitted = false;
 

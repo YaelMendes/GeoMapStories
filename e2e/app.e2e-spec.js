@@ -8,5 +8,8 @@ describe('QuickStart E2E Tests', function () {
     it('should display: ' + expectedMsg, function () {
         expect(protractor_1.element(protractor_1.by.css('h1')).getText()).toEqual(expectedMsg);
     });
+    describe('1st tests', function () {
+        it('true is true', function () { return expect(false).toBe(true); });
+    });
 });
 //# sourceMappingURL=app.e2e-spec.js.map
