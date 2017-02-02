@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var story_component_1 = require("../components/story.component");
 var stories_statistics_component_1 = require("../components/stories-statistics.component");
+var sandbox_component_1 = require("../components/sandbox.component");
 var routes = [
     { path: '', redirectTo: '/stories', pathMatch: 'full' },
     { path: 'stories', component: story_component_1.StoryComponent },
-    { path: 'statisticsPath', component: stories_statistics_component_1.StatisticsComponent }
+    { path: 'statisticsPath', component: stories_statistics_component_1.StatisticsComponent },
+    { path: 'sandbox', component: sandbox_component_1.SandBoxComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

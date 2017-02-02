@@ -40,4 +40,7 @@ export class StoryComponent implements OnInit {
     this.router.navigate(['/statisticsPath']);
   }
 
+  gotoSandbox(): void {
+    this.router.navigate(['/sandbox']);
+  }
 }

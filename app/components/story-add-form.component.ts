@@ -1,17 +1,17 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Injectable} from '@angular/core';
 import {Story} from "../objects/story";
 import {DataService} from "../services/data.service";
-import {AppSettings} from "../AppSettings";
+import {VARIABLES} from "../AppSettings";
 
 @Component({
   moduleId: module.id,
   selector: 'story-add-form',
-  templateUrl: '../html/story-add-form.component.html'
+  templateUrl: '../html/story-add-form.component.html',
 })
 export class StoryAddFormComponent {
   @Input() stories: Story[];
 
-  title = AppSettings.ADD_STORY_FORM_TITLE;
+  title = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
   submitted = false;
 
