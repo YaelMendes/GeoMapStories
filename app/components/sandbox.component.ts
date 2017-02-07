@@ -3,6 +3,8 @@
  */
 import {Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
+import {Http} from "@angular/http";
+import {Route, Params} from "@angular/router";
 
 @Component({
   moduleId: module.id,
@@ -38,7 +40,9 @@ import { Location } from '@angular/common';
      </div> 
      
      
-     <button (click)="goBack()">Back</button>`
+     <button (click)="goBack()">Back</button>
+    `,
+  styleUrls: ['../css/app.component.css']
 })
 export class SandBoxComponent implements OnInit {
   title = "coucou"
@@ -50,9 +54,10 @@ export class SandBoxComponent implements OnInit {
   prop: string
 
   ngOnInit(): void {
+    //this.testSwitchMap();
   }
 
-  constructor(private location: Location) {}
+  constructor(private location: Location, private http: Http, private route: Route) {}
 
   onClick() : void {
     this.changeNb()
@@ -79,4 +84,10 @@ export class SandBoxComponent implements OnInit {
     this.location.back()
   }
 
+/*  private testSwitchMap() {
+    this.route.params
+    // (+) converts string 'id' to a number
+      .switchMap((params: Params) => this.service.getHero(+params['id']))
+      .subscribe((hero: Hero) => this.hero = hero);
+  }*/
 }
