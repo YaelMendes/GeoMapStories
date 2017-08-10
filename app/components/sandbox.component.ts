@@ -1,7 +1,7 @@
 /**
  * Created by yme on 01.02.2017.
  */
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import { Location } from '@angular/common';
 import {Http} from "@angular/http";
 import {Route, Params} from "@angular/router";
@@ -57,7 +57,7 @@ export class SandBoxComponent implements OnInit {
     //this.testSwitchMap();
   }
 
-  constructor(private location: Location, private http: Http, private route: Route) {}
+  constructor(@Inject(Location) location: Location, @Inject(Http) http: Http) {}
 
   onClick() : void {
     this.changeNb()
@@ -81,7 +81,7 @@ export class SandBoxComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back()
+   // this.location.back()
   }
 
 /*  private testSwitchMap() {
