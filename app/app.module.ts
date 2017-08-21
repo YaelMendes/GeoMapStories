@@ -18,6 +18,7 @@ import {ShowStoryComponent} from "./components/story-selected.component";
 import {StoryAddFormComponent} from "./components/story-add-form.component";
 import {StatisticsComponent} from "./components/stories-statistics.component";
 import {SandBoxComponent} from "./components/sandbox.component";
+import {StoryMapComponent} from "./components/stories-map.component";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {SandBoxComponent} from "./components/sandbox.component";
     StoryListComponent,
     ShowStoryComponent,
     StoryAddFormComponent,
+    StoryMapComponent,
     StatisticsComponent,
     SandBoxComponent
   ],

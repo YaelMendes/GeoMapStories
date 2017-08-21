@@ -22,6 +22,7 @@ var story_selected_component_1 = require("./components/story-selected.component"
 var story_add_form_component_1 = require("./components/story-add-form.component");
 var stories_statistics_component_1 = require("./components/stories-statistics.component");
 var sandbox_component_1 = require("./components/sandbox.component");
+var stories_map_component_1 = require("./components/stories-map.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -41,6 +42,7 @@ var AppModule = (function () {
                 stories_list_component_1.StoryListComponent,
                 story_selected_component_1.ShowStoryComponent,
                 story_add_form_component_1.StoryAddFormComponent,
+                stories_map_component_1.StoryMapComponent,
                 stories_statistics_component_1.StatisticsComponent,
                 sandbox_component_1.SandBoxComponent
             ],

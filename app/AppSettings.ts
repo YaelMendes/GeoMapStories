@@ -4,6 +4,6 @@
 
 export const VARIABLES = {
 
-  ADD_STORY_FORM_TITLE_2: 'Story title 2 '
+  ADD_STORY_FORM_TITLE_2: 'Add story'
 
 }
