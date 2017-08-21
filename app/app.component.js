@@ -11,14 +11,14 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Application';
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n  <h1>{{title}}</h1>\n    <nav>\n    </nav>\n  <router-outlet></router-outlet>\n",
+            styleUrls: ['app/css/app.component.css']
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n  <h1>{{title}}</h1>\n    <nav>\n    </nav>\n  <router-outlet></router-outlet>\n",
-        styleUrls: ['app/css/app.component.css']
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

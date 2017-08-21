@@ -46,11 +46,8 @@ import {Route, Params} from "@angular/router";
 })
 export class SandBoxComponent implements OnInit {
   title = "coucou"
-
   numberFromComponent: number
-
   valuesFromDom = ''
-
   prop: string
 
   ngOnInit(): void {

@@ -13,11 +13,12 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var Rx_1 = require("rxjs/Rx");
-var DataService = DataService_1 = (function () {
+var DataService = (function () {
     function DataService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
+    DataService_1 = DataService;
     DataService.prototype.getNumberStories = function () {
         return this.http.get('http://localhost:8090/story/all/count')
             .map(function (res) { return res.json(); })
@@ -45,12 +46,12 @@ var DataService = DataService_1 = (function () {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
+    DataService = DataService_1 = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], DataService);
     return DataService;
+    var DataService_1;
 }());
-DataService = DataService_1 = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], DataService);
 exports.DataService = DataService;
-var DataService_1;
 //# sourceMappingURL=data.service.js.map
