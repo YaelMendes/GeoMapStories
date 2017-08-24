@@ -23,6 +23,7 @@ var story_add_form_component_1 = require("./components/story-add-form.component"
 var stories_statistics_component_1 = require("./components/stories-statistics.component");
 var sandbox_component_1 = require("./components/sandbox.component");
 var stories_map_component_1 = require("./components/stories-map.component");
+var story_ngx_ol_component_1 = require("./components/story-ngx-ol.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,7 +45,8 @@ var AppModule = (function () {
                 story_add_form_component_1.StoryAddFormComponent,
                 stories_map_component_1.StoryMapComponent,
                 stories_statistics_component_1.StatisticsComponent,
-                sandbox_component_1.SandBoxComponent
+                sandbox_component_1.SandBoxComponent,
+                story_ngx_ol_component_1.StoryNgxOlComponent
             ],
             providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]

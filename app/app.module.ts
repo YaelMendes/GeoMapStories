@@ -19,6 +19,7 @@ import {StoryAddFormComponent} from "./components/story-add-form.component";
 import {StatisticsComponent} from "./components/stories-statistics.component";
 import {SandBoxComponent} from "./components/sandbox.component";
 import {StoryMapComponent} from "./components/stories-map.component";
+import {StoryNgxOlComponent} from "./components/story-ngx-ol.component";
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {StoryMapComponent} from "./components/stories-map.component";
     StoryAddFormComponent,
     StoryMapComponent,
     StatisticsComponent,
-    SandBoxComponent
+    SandBoxComponent,
+    StoryNgxOlComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]
