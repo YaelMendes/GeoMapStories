@@ -146,10 +146,15 @@ Shut it down manually with `Ctrl-C`.
 
 
 
-
-Please take the following steps to avoid issues:
-"npm uninstall --save-dev angular-cli"
-"npm install --save-dev @angular/cli@latest" 
+ng serve
 
 
-npm install -g @angular/compiler-cli
+
+<aol-map [width]="'500px'" [height]="'300'">
+  <aol-view [zoom]="2">
+    <aol-coordinate [x]="5.795122" [y]="45.210225" [srid]="'EPSG:4326'"></aol-coordinate>
+  </aol-view>
+  <aol-layer-tile>
+    <aol-source-osm></aol-source-osm>
+  </aol-layer-tile>
+</aol-map>
