@@ -143,3 +143,13 @@ Shut it down manually with `Ctrl-C`.
 
 [travis-badge]: https://travis-ci.org/angular/quickstart.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/angular/quickstart
+
+
+
+
+Please take the following steps to avoid issues:
+"npm uninstall --save-dev angular-cli"
+"npm install --save-dev @angular/cli@latest" 
+
+
+npm install -g @angular/compiler-cli
