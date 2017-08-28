@@ -38,8 +38,7 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.4.3",
     "systemjs": "0.20.18",
-    "zone.js": "^0.8.16",
-    "ngx-openlayers": "0.6.9"
+    "zone.js": "^0.8.16"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.53",

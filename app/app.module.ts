@@ -21,6 +21,7 @@ import {SandBoxComponent} from "./components/sandbox.component";
 import {StoryMapComponent} from "./components/stories-map.component";
 import {StoryNgxOlComponent} from "./components/story-ngx-ol.component";
 
+import { AngularOpenlayersModule } from 'ngx-openlayers';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import {StoryNgxOlComponent} from "./components/story-ngx-ol.component";
     ReactiveFormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true}),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularOpenlayersModule
   ],
   declarations: [
     AppComponent,

@@ -24,6 +24,7 @@ var stories_statistics_component_1 = require("./components/stories-statistics.co
 var sandbox_component_1 = require("./components/sandbox.component");
 var stories_map_component_1 = require("./components/stories-map.component");
 var story_ngx_ol_component_1 = require("./components/story-ngx-ol.component");
+var ngx_openlayers_1 = require("ngx-openlayers");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +36,8 @@ var AppModule = (function () {
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { passThruUnknownUrl: true }),
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                ngx_openlayers_1.AngularOpenlayersModule
             ],
             declarations: [
                 app_component_1.AppComponent,
