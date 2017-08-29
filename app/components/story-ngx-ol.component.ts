@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
+import {Story} from "../objects/story";
 
 @Component({
   moduleId: module.id,
@@ -7,6 +9,8 @@ import {Component} from '@angular/core';
   styleUrls: ['../css/story-ngx-ol.component.css']
 })
 export class StoryNgxOlComponent {
+  @Input() allStories: Story[];
+
   public zoom = 15;
   public opacity = 1.0;
   public width = 5;
