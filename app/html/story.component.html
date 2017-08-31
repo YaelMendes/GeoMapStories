@@ -6,7 +6,7 @@
 
     <div style="flex: 3 1 70%; order: 1">
 
-      <div>
+      <div style="border: 1px solid; border-radius: 7pt;">
         <br/>
         <story-ngx-ol [allStories]="stories"></story-ngx-ol>
         <br/>
@@ -14,12 +14,12 @@
     </div>
 
     <div style="flex: 1 6 30%; order: 2">
-      <div>
+      <div style="border: 1px solid; border-radius: 7pt;">
         <br/>
         <selected-story [selectedStory]="story"></selected-story>
         <br/>
       </div>
-      <div>
+      <div style="border: 1px solid; border-radius: 7pt;">
         <br/>
         <story-add-form [stories]="stories"></story-add-form>
         <br/>
@@ -29,9 +29,11 @@
   </div>
 
   <div style="display: block">
-    <br/>
-    <all-stories [allStories]="stories"></all-stories>
-    <br/>
+    <div style="border: 1px solid; border-radius: 7pt;">
+      <br/>
+      <all-stories [allStories]="stories"></all-stories>
+      <br/>
+    </div>
   </div>
 
   <div style="display: block">
