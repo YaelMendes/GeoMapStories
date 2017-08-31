@@ -1,25 +1,29 @@
 <h2>Main stories page</h2>
 
-<br/>
-<story-ngx-ol [allStories]="stories"></story-ngx-ol>
-<br/>
+<div>
+  <br/>
+  <story-ngx-ol [allStories]="stories"></story-ngx-ol>
+  <br/>
 
-<br/>
-<story-add-form [stories]="stories"></story-add-form>
-<br/>
+  <div style="float: right">
+    <br/>
+    <all-stories [allStories]="stories"></all-stories>
+    <br/>
+  </div>
 
-<br/>
-<selected-story [selectedStory]="story"></selected-story>
-<br/>
+  <br/>
+  <story-add-form [stories]="stories"></story-add-form>
+  <br/>
 
-<br/>
-<all-stories [allStories]="stories"></all-stories>
-<br/>
+  <br/>
+  <selected-story [selectedStory]="story"></selected-story>
+  <br/>
 
-<br/>
-<button (click)="gotoStatistics()">View Statistics</button>
-<br/>
+  <br/>
+  <button (click)="gotoStatistics()">View Statistics</button>
+  <br/>
 
-<br/>
-<button (click)="gotoSandbox()">Go in sandbox</button>
-<br/>
+  <br/>
+  <button (click)="gotoSandbox()">Go in sandbox</button>
+  <br/>
+</div>

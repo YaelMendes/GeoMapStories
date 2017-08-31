@@ -29,9 +29,7 @@ export class StoryComponent implements OnInit {
 
     let storiees = InMemoryDataService.getSomeStories();
     return storiees;
-
   }
-
 
   retrieveObservableStories(){
     this.dataService.getObservableStories()
