@@ -2,17 +2,18 @@
 
 <div>
 
-<div style="display: flex; flex-row: row">
+  <div style="display: flex; flex-row: row">
 
-  <div style="flex: 3 1 70%; order: 1">
+    <div style="flex: 3 1 70%; order: 1">
 
-    <div>
-      <br/>
-      <story-ngx-ol [allStories]="stories"></story-ngx-ol>
-      <br/>
+      <div>
+        <br/>
+        <story-ngx-ol [allStories]="stories"></story-ngx-ol>
+        <br/>
+      </div>
     </div>
 
-    <div>
+    <div style="flex: 1 6 30%; order: 2">
       <div>
         <br/>
         <selected-story [selectedStory]="story"></selected-story>
@@ -27,28 +28,25 @@
 
   </div>
 
-  <div style="flex: 1 6 30%; order: 2">
+  <div style="display: block">
     <br/>
     <all-stories [allStories]="stories"></all-stories>
     <br/>
   </div>
 
-</div>
+  <div style="display: block">
+    <div>
+      <br/>
+      <button (click)="gotoStatistics()">View Statistics</button>
+      <br/>
+    </div>
 
-
-<div style="display: block">
-  <div>
-    <br/>
-    <button (click)="gotoStatistics()">View Statistics</button>
-    <br/>
+    <div>
+      <br/>
+      <button (click)="gotoSandbox()">Go in sandbox</button>
+      <br/>
+    </div>
   </div>
-
-  <div>
-    <br/>
-    <button (click)="gotoSandbox()">Go in sandbox</button>
-    <br/>
-  </div>
-</div>
 
 
 </div>
