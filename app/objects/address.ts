@@ -1,7 +1,12 @@
+import {Coordinate} from "../objects/coordinate";
+
 export class Address {
 
-    realAddress: string;
+    public realAddress: string;
+    public coordinate: Coordinate;
 
-    // to be completed with object from google api maps
-
+  constructor(realAddress: string)
+  {
+    this.realAddress = realAddress;
+  }
 }

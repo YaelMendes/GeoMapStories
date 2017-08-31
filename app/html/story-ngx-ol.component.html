@@ -1,5 +1,3 @@
-
-
 <aol-map [width]="'60%'" [height]="'60%'">
   <aol-interaction-default></aol-interaction-default>
   <aol-view [zoom]="zoom">
@@ -8,9 +6,37 @@
   <aol-layer-tile>
     <aol-source-osm></aol-source-osm>
   </aol-layer-tile>
+
+  <aol-layer-vector [opacity]="opacity">
+    <aol-source-vector>
+
+      <li *ngFor="let story of allStories">
+
+      <aol-feature>
+        <aol-geometry-point>
+          <aol-coordinate [x]="story.address.coordinate.x" [y]="story.address.coordinate.y" [srid]="story.address.coordinate.srid"></aol-coordinate>
+        </aol-geometry-point>
+        <aol-style>
+          <aol-style-circle [radius]="10">
+            <aol-style-stroke [color]="'black'" [width]="width"></aol-style-stroke>
+            <aol-style-fill [color]="'red'"></aol-style-fill>
+          </aol-style-circle>
+        </aol-style>
+      </aol-feature>
+
+      </li>
+
+
+    </aol-source-vector>
+  </aol-layer-vector>
+
 </aol-map>
 
 
-<span>opacity:</span><button (click)="increaseOpacity()">+</button><button (click)="decreaseOpacity()">-</button><br>
-<span>zoom:</span><button (click)="increaseZoom()">+</button><button (click)="decreaseZoom()">-</button><br>
+<span>opacity:</span>
+<button (click)="increaseOpacity()">+</button>
+<button (click)="decreaseOpacity()">-</button><br>
+<span>zoom:</span>
+<button (click)="increaseZoom()">+</button>
+<button (click)="decreaseZoom()">-</button><br>
 

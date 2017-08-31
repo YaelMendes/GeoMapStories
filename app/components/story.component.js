@@ -11,35 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
-var story_1 = require("../objects/story");
 var router_1 = require("@angular/router");
+var in_memory_data_service_1 = require("../services/in-memory-data.service");
 var StoryComponent = (function () {
     function StoryComponent(dataService, router) {
         this.dataService = dataService;
         this.router = router;
     }
     StoryComponent.prototype.ngOnInit = function () {
-        this.retrieveOneObservableStories();
+        //  this.retrieveOneObservableStories();
         //  this.retrieveObservableStories();
         this.stories = this.retrieveMockStories();
     };
     StoryComponent.prototype.retrieveMockStories = function () {
-        var st1, st2, st3;
-        st1 = new story_1.Story("descr1", "addr11", new Date());
-        st2 = new story_1.Story("descr2", "addr2", new Date());
-        st3 = new story_1.Story("descr3", "addr3", new Date());
-        var storiesList;
-        storiesList = new Array();
-        storiesList.push(st1, st2, st3);
-        return storiesList;
-        /*
-        let storiesList___ = [
-          {id: "1", description: "birth", address: 'place Vendome 75000 Paris France', begin: '1977-10-02'},
-          {id: "2", description: "this is a short descr", address: 'place Vendome 75000 Paris France', begin: '1977-10-02'},
-          {id: "3", description: "this is another story",  address: 'place Vendome 75000 Paris France', begin: '1977-10-02'}
-        ];
-        return {st1,st2,st3};
-        */
+        var storiees = in_memory_data_service_1.InMemoryDataService.getSomeStories();
+        return storiees;
     };
     StoryComponent.prototype.retrieveObservableStories = function () {
         var _this = this;

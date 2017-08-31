@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var story_1 = require("../objects/story");
+var address_1 = require("../objects/address");
+var coordinate_1 = require("../objects/coordinate");
 var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }
@@ -10,6 +13,19 @@ var InMemoryDataService = (function () {
             { id: "3", description: "this is another story", address: 'place Vendome 75000 Paris France', begin: '1977-10-02' }
         ];
         return { storiesList: storiesList };
+    };
+    InMemoryDataService.getSomeStories = function () {
+        var st1, st2, st3;
+        st1 = new story_1.Story("descr1", new address_1.Address("addr11"), new Date());
+        st2 = new story_1.Story("descr2", new address_1.Address("addr2"), new Date());
+        st3 = new story_1.Story("descr3333", new address_1.Address("addr3"), new Date());
+        st1.address.coordinate = new coordinate_1.Coordinate(692249.10, 5804715.26, "EPSG:3857");
+        st2.address.coordinate = new coordinate_1.Coordinate(692470.47, 5804715.26, "EPSG:3857");
+        st3.address.coordinate = new coordinate_1.Coordinate(692050.37, 5804715.26, "EPSG:3857");
+        var storiesList;
+        storiesList = new Array();
+        storiesList.push(st1, st2, st3);
+        return storiesList;
     };
     return InMemoryDataService;
 }());

@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Address = (function () {
-    function Address() {
+    function Address(realAddress) {
+        this.realAddress = realAddress;
     }
     return Address;
 }());
