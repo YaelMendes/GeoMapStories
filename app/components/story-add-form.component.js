@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var story_1 = require("../objects/story");
+var address_1 = require("../objects/address");
 var data_service_1 = require("../services/data.service");
 var AppSettings_1 = require("../AppSettings");
 var StoryAddFormComponent = (function () {
@@ -21,7 +22,7 @@ var StoryAddFormComponent = (function () {
         this.model = this.initStory();
     }
     StoryAddFormComponent.prototype.initStory = function () {
-        return new story_1.Story("", "", new Date());
+        return new story_1.Story("", new address_1.Address(""), new Date());
     };
     StoryAddFormComponent.prototype.onSubmit = function () {
         this.submitted = true;

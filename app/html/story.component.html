@@ -1,9 +1,26 @@
 <h2>Main stories page</h2>
 
 <div>
-  <br/>
-  <story-ngx-ol [allStories]="stories"></story-ngx-ol>
-  <br/>
+
+  <div style="float: left">
+    <div>
+      <br/>
+      <story-ngx-ol [allStories]="stories"></story-ngx-ol>
+      <br/>
+    </div>
+
+    <div>
+      <br/>
+      <selected-story [selectedStory]="story"></selected-story>
+      <br/>
+    </div>
+
+    <div>
+      <br/>
+      <story-add-form [stories]="stories"></story-add-form>
+      <br/>
+    </div>
+  </div>
 
   <div style="float: right">
     <br/>
@@ -11,19 +28,17 @@
     <br/>
   </div>
 
-  <br/>
-  <story-add-form [stories]="stories"></story-add-form>
-  <br/>
 
-  <br/>
-  <selected-story [selectedStory]="story"></selected-story>
-  <br/>
+  <div>
+    <br/>
+    <button (click)="gotoStatistics()">View Statistics</button>
+    <br/>
+  </div>
 
-  <br/>
-  <button (click)="gotoStatistics()">View Statistics</button>
-  <br/>
+  <div>
+    <br/>
+    <button (click)="gotoSandbox()">Go in sandbox</button>
+    <br/>
+  </div>
 
-  <br/>
-  <button (click)="gotoSandbox()">Go in sandbox</button>
-  <br/>
 </div>

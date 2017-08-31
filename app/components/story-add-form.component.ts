@@ -1,5 +1,6 @@
 import {Component, Input, Injectable} from '@angular/core';
 import {Story} from "../objects/story";
+import {Address} from "../objects/address";
 import {DataService} from "../services/data.service";
 import {VARIABLES} from "../AppSettings";
 
@@ -18,7 +19,7 @@ export class StoryAddFormComponent {
   model = this.initStory();
 
   private initStory() {
-    return new Story("", "", new Date());
+    return new Story("", new Address(""), new Date());
   }
 
   constructor(private dataService: DataService) {
