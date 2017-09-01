@@ -45,6 +45,7 @@ var StoryComponent = (function () {
     StoryComponent.prototype.receiveMessage = function (mapBrowserEvent) {
         // this.x = 222;
         console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+        this.mapBrowserEvent = mapBrowserEvent;
     };
     StoryComponent.prototype.gotoStatistics = function () {
         this.router.navigate(['/statisticsPath']);

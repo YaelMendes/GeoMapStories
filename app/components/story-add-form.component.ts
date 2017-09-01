@@ -27,6 +27,7 @@ export class StoryAddFormComponent {
     if (this.mapBrowserEvent !== undefined) {
       console.log("initStory is called !   coordinate =" + this.mapBrowserEvent.coordinate[0] + +this.mapBrowserEvent.coordinate[1]);
     }
+    console.log("initStory is called !  mapBrowserEvent=" + this.mapBrowserEvent);
 
     return new Story("", new Address(""), new Date());
   }
@@ -35,6 +36,8 @@ export class StoryAddFormComponent {
   }
 
   onSubmit() {
+    console.log("onSubmit is called !  mapBrowserEvent=" + this.mapBrowserEvent);
+
     this.submitted = true;
     this.addStory(this.model);
   }

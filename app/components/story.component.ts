@@ -58,6 +58,8 @@ export class StoryComponent implements OnInit /*, AfterViewInit */{
   receiveMessage(mapBrowserEvent: MapBrowserEvent) {
     // this.x = 222;
     console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+
+    this.mapBrowserEvent = mapBrowserEvent;
   }
 
   gotoStatistics(): void {
