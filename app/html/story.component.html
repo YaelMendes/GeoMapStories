@@ -8,7 +8,7 @@
 
       <div style="border: 1px solid; border-radius: 7pt;">
         <br/>
-        <story-ngx-ol [allStories]="stories"></story-ngx-ol>
+        <story-ngx-ol [allStories]="stories" (messageEvent)="receiveMessage($event)"></story-ngx-ol>
         <br/>
       </div>
     </div>
@@ -21,7 +21,7 @@
       </div>
       <div style="border: 1px solid; border-radius: 7pt;">
         <br/>
-        <story-add-form [stories]="stories"></story-add-form>
+        <story-add-form [stories]="stories" [x]="x"></story-add-form>
         <br/>
       </div>
     </div>

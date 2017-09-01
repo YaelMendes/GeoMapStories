@@ -1,6 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 import {Story} from "../objects/story";
+
+import {MapBrowserEvent} from 'openlayers';
 
 @Component({
   moduleId: module.id,
@@ -10,6 +12,10 @@ import {Story} from "../objects/story";
 })
 export class StoryNgxOlComponent {
   @Input() allStories: Story[];
+
+    @Output() messageEvent = new EventEmitter<any>();
+
+    x : number = 1000;
 
   public zoom = 15;
   public opacity = 1.0;
@@ -33,5 +39,14 @@ export class StoryNgxOlComponent {
   decreaseOpacity() {
     this.opacity  = Math.max(this.opacity - 0.1, 0);
     console.log('opacity: ', this.opacity);
+  }
+
+  fillCoordinates(event: MapBrowserEvent) {
+    console.log(event);
+    console.log(event.coordinate[0] + ',' + event.coordinate[1]);
+
+    this.x = event.coordinate[0];
+
+    this.messageEvent.emit(this.x);
   }
 }

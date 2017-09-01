@@ -22,6 +22,7 @@ var StoryAddFormComponent = (function () {
         this.model = this.initStory();
     }
     StoryAddFormComponent.prototype.initStory = function () {
+        console.log("initStory is called !   x =" + this.x);
         return new story_1.Story("", new address_1.Address(""), new Date());
     };
     StoryAddFormComponent.prototype.onSubmit = function () {
@@ -43,6 +44,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], StoryAddFormComponent.prototype, "stories", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], StoryAddFormComponent.prototype, "x", void 0);
 StoryAddFormComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

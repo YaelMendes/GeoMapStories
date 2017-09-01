@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var StoryNgxOlComponent = (function () {
     function StoryNgxOlComponent() {
+        this.messageEvent = new core_1.EventEmitter();
+        this.x = 1000;
         this.zoom = 15;
         this.opacity = 1.0;
         this.width = 5;
@@ -32,12 +34,22 @@ var StoryNgxOlComponent = (function () {
         this.opacity = Math.max(this.opacity - 0.1, 0);
         console.log('opacity: ', this.opacity);
     };
+    StoryNgxOlComponent.prototype.fillCoordinates = function (event) {
+        console.log(event);
+        console.log(event.coordinate[0] + ',' + event.coordinate[1]);
+        this.x = event.coordinate[0];
+        this.messageEvent.emit(this.x);
+    };
     return StoryNgxOlComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], StoryNgxOlComponent.prototype, "allStories", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], StoryNgxOlComponent.prototype, "messageEvent", void 0);
 StoryNgxOlComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

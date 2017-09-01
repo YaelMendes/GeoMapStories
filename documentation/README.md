@@ -36,10 +36,10 @@ Available parameters are:
         Defaults to `undefined`.
     - `renderer` (`'canvas'|'webgl'|undefined`): map renderer.
         Defaults to canvas.
+:
+Exposed events 
 
-Exposed events are:
-
-    - `onClick` (ol.MapBrowserEvent) - A click with no dragging. A double click will fire two of this.
+    - `onClick` (ol.MapBrowserEvent) - A click with no dragging. areA double click will fire two of this.
     - `onDblClick` (ol.MapBrowserEvent) - A true double click, with no dragging.
     - `onMoveEnd` (ol.MapEvent) - Triggered after the map is moved.
     - `onPointerDrag` (ol.MapBrowserEvent) experimental - Triggered when a pointer is dragged.

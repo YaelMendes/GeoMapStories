@@ -12,6 +12,8 @@ import {VARIABLES} from "../AppSettings";
 export class StoryAddFormComponent {
   @Input() stories: Story[];
 
+  @Input() x: number;
+
   title = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
   submitted = false;
@@ -19,6 +21,9 @@ export class StoryAddFormComponent {
   model = this.initStory();
 
   private initStory() {
+
+    console.log("initStory is called !   x =" + this.x);
+
     return new Story("", new Address(""), new Date());
   }
 
@@ -32,11 +37,13 @@ export class StoryAddFormComponent {
 
   addStory(story: Story): void {
     if (!story.description || !story.address || !story.begin) { return; }
+
     this.dataService.addObsStory(story)
       .subscribe(
           st => this.stories.push(st),
           err => { console.log(err);}
         );
+
     this.model = this.initStory();
   }
 

@@ -18,9 +18,14 @@ var StoryComponent = (function () {
         this.dataService = dataService;
         this.router = router;
     }
+    StoryComponent.prototype.receiveMessage = function (event) {
+        // this.x = 222;
+        console.log("-- receiveMessage x=" + event);
+    };
     StoryComponent.prototype.ngOnInit = function () {
         //  this.retrieveOneObservableStories();
         //  this.retrieveObservableStories();
+        console.log("-- ngOnInit ");
         this.stories = this.retrieveMockStories();
     };
     StoryComponent.prototype.retrieveMockStories = function () {
@@ -33,11 +38,14 @@ var StoryComponent = (function () {
             .subscribe(function (stories) { return _this.stories = stories; }, function (err) { console.log(err); });
         console.log('calling retrieveStories....:' + this.stories);
     };
-    StoryComponent.prototype.retrieveOneObservableStories = function () {
-        var _this = this;
-        this.dataService.getOneObservableStory()
-            .subscribe(function (story) { _this.story = story; }, function (err) { console.log(err); });
-    };
+    /*
+    retrieveOneObservableStories(){
+      this.dataService.getOneObservableStory()
+        .subscribe(
+            story => {this.story = story; },
+            err => { console.log(err);}
+          );
+    }*/
     StoryComponent.prototype.gotoStatistics = function () {
         this.router.navigate(['/statisticsPath']);
     };
