@@ -31,7 +31,9 @@ export class StoryComponent implements OnInit /*, AfterViewInit */{
 
     console.log("-- ngOnInit ");
 
-    this.stories = this.retrieveMockStories();
+    if (this.stories === undefined || this.stories.length == 0) {
+      this.stories = this.retrieveMockStories();
+    }
   }
 
   retrieveMockStories() : Story[] {//

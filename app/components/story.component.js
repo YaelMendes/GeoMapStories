@@ -22,7 +22,9 @@ var StoryComponent = (function () {
         //  this.retrieveOneObservableStories();
         //  this.retrieveObservableStories();
         console.log("-- ngOnInit ");
-        this.stories = this.retrieveMockStories();
+        if (this.stories === undefined || this.stories.length == 0) {
+            this.stories = this.retrieveMockStories();
+        }
     };
     StoryComponent.prototype.retrieveMockStories = function () {
         var storiees = in_memory_data_service_1.InMemoryDataService.getSomeStories();

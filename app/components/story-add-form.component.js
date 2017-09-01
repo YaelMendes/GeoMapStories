@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var story_1 = require("../objects/story");
+var coordinate_1 = require("../objects/coordinate");
 var address_1 = require("../objects/address");
 var data_service_1 = require("../services/data.service");
 var AppSettings_1 = require("../AppSettings");
@@ -20,15 +21,8 @@ var StoryAddFormComponent = (function () {
         this.dataService = dataService;
         this.title = AppSettings_1.VARIABLES.ADD_STORY_FORM_TITLE_2;
         this.submitted = false;
-        this.model = this.initStory();
+        this.model = this.resetStory();
     }
-    StoryAddFormComponent.prototype.initStory = function () {
-        if (this.mapBrowserEvent !== undefined) {
-            console.log("initStory is called !   coordinate =" + this.mapBrowserEvent.coordinate[0] + +this.mapBrowserEvent.coordinate[1]);
-        }
-        console.log("initStory is called !  mapBrowserEvent=" + this.mapBrowserEvent);
-        return new story_1.Story("", new address_1.Address(""), new Date());
-    };
     StoryAddFormComponent.prototype.onSubmit = function () {
         console.log("onSubmit is called !  mapBrowserEvent=" + this.mapBrowserEvent);
         this.submitted = true;
@@ -39,9 +33,14 @@ var StoryAddFormComponent = (function () {
         if (!story.description || !story.address || !story.begin) {
             return;
         }
+        story.address.coordinate = new coordinate_1.Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], "EPSG:3857");
         this.dataService.addObsStory(story)
             .subscribe(function (st) { return _this.stories.push(st); }, function (err) { console.log(err); });
-        this.model = this.initStory();
+        // prepare for a new story
+        this.model = this.resetStory();
+    };
+    StoryAddFormComponent.prototype.resetStory = function () {
+        return new story_1.Story("", new address_1.Address(""), new Date());
     };
     return StoryAddFormComponent;
 }());

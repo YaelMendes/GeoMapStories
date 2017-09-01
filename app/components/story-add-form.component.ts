@@ -1,5 +1,6 @@
 import {Component, Input, Injectable} from '@angular/core';
 import {Story} from "../objects/story";
+import {Coordinate} from "../objects/coordinate";
 import {Address} from "../objects/address";
 import {DataService} from "../services/data.service";
 import {VARIABLES} from "../AppSettings";
@@ -13,24 +14,14 @@ import {MapBrowserEvent} from 'openlayers';
 })
 export class StoryAddFormComponent {
   @Input() stories: Story[];
-
   @Input() mapBrowserEvent: MapBrowserEvent;
 
   title = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
   submitted = false;
 
-  model = this.initStory();
+  model = this.resetStory();
 
-  private initStory() {
-
-    if (this.mapBrowserEvent !== undefined) {
-      console.log("initStory is called !   coordinate =" + this.mapBrowserEvent.coordinate[0] + +this.mapBrowserEvent.coordinate[1]);
-    }
-    console.log("initStory is called !  mapBrowserEvent=" + this.mapBrowserEvent);
-
-    return new Story("", new Address(""), new Date());
-  }
 
   constructor(private dataService: DataService) {
   }
@@ -45,13 +36,19 @@ export class StoryAddFormComponent {
   addStory(story: Story): void {
     if (!story.description || !story.address || !story.begin) { return; }
 
+    story.address.coordinate = new Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], "EPSG:3857");
+
     this.dataService.addObsStory(story)
       .subscribe(
           st => this.stories.push(st),
           err => { console.log(err);}
         );
 
-    this.model = this.initStory();
+    // prepare for a new story
+    this.model = this.resetStory();
   }
 
+  private resetStory() {
+    return new Story("", new Address(""), new Date());
+  }
 }
