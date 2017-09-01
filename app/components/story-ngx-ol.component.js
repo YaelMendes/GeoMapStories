@@ -34,11 +34,11 @@ var StoryNgxOlComponent = (function () {
         this.opacity = Math.max(this.opacity - 0.1, 0);
         console.log('opacity: ', this.opacity);
     };
-    StoryNgxOlComponent.prototype.fillCoordinates = function (event) {
-        console.log(event);
-        console.log(event.coordinate[0] + ',' + event.coordinate[1]);
-        this.x = event.coordinate[0];
-        this.messageEvent.emit(this.x);
+    StoryNgxOlComponent.prototype.fillCoordinates = function (mapBrowserEvent) {
+        console.log(mapBrowserEvent);
+        console.log(mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+        // this.x = event.coordinate[0];
+        this.messageEvent.emit(mapBrowserEvent);
     };
     return StoryNgxOlComponent;
 }());

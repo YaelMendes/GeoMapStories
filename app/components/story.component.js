@@ -18,10 +18,6 @@ var StoryComponent = (function () {
         this.dataService = dataService;
         this.router = router;
     }
-    StoryComponent.prototype.receiveMessage = function (event) {
-        // this.x = 222;
-        console.log("-- receiveMessage x=" + event);
-    };
     StoryComponent.prototype.ngOnInit = function () {
         //  this.retrieveOneObservableStories();
         //  this.retrieveObservableStories();
@@ -46,6 +42,10 @@ var StoryComponent = (function () {
             err => { console.log(err);}
           );
     }*/
+    StoryComponent.prototype.receiveMessage = function (mapBrowserEvent) {
+        // this.x = 222;
+        console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+    };
     StoryComponent.prototype.gotoStatistics = function () {
         this.router.navigate(['/statisticsPath']);
     };

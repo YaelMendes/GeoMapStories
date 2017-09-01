@@ -4,6 +4,8 @@ import {Address} from "../objects/address";
 import {DataService} from "../services/data.service";
 import {VARIABLES} from "../AppSettings";
 
+import {MapBrowserEvent} from 'openlayers';
+
 @Component({
   moduleId: module.id,
   selector: 'story-add-form',
@@ -12,7 +14,7 @@ import {VARIABLES} from "../AppSettings";
 export class StoryAddFormComponent {
   @Input() stories: Story[];
 
-  @Input() x: number;
+  @Input() mapBrowserEvent: MapBrowserEvent;
 
   title = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
@@ -22,7 +24,9 @@ export class StoryAddFormComponent {
 
   private initStory() {
 
-    console.log("initStory is called !   x =" + this.x);
+    if (this.mapBrowserEvent !== undefined) {
+      console.log("initStory is called !   coordinate =" + this.mapBrowserEvent.coordinate[0] + +this.mapBrowserEvent.coordinate[1]);
+    }
 
     return new Story("", new Address(""), new Date());
   }

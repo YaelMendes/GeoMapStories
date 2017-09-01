@@ -8,23 +8,19 @@ import {InMemoryDataService} from "../services/in-memory-data.service"
 
 import {StoryNgxOlComponent} from "./story-ngx-ol.component";
 
+import {MapBrowserEvent} from 'openlayers';
+
 @Component({
   moduleId: module.id,
   selector: 'my-stories',
   templateUrl: '../html/story.component.html',
 })
 export class StoryComponent implements OnInit /*, AfterViewInit */{
-
-
   stories: Story[];
-  story: Story;
+ // story: Story;
 
-  x: number;
-
-  receiveMessage(event: number) {
-   // this.x = 222;
-    console.log("-- receiveMessage x=" + event);
-  }
+ // x: number;
+  mapBrowserEvent: MapBrowserEvent;
 
   constructor(private dataService: DataService, private router: Router) {
   }
@@ -58,6 +54,11 @@ export class StoryComponent implements OnInit /*, AfterViewInit */{
           err => { console.log(err);}
         );
   }*/
+
+  receiveMessage(mapBrowserEvent: MapBrowserEvent) {
+    // this.x = 222;
+    console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+  }
 
   gotoStatistics(): void {
     this.router.navigate(['/statisticsPath']);
