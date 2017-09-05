@@ -13,17 +13,21 @@ var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
 var router_1 = require("@angular/router");
 var in_memory_data_service_1 = require("../services/in-memory-data.service");
+var AppSettings_1 = require("../AppSettings");
 var StoryComponent = (function () {
     function StoryComponent(dataService, router) {
         this.dataService = dataService;
         this.router = router;
     }
     StoryComponent.prototype.ngOnInit = function () {
-        //  this.retrieveOneObservableStories();
-        //  this.retrieveObservableStories();
         console.log("-- ngOnInit ");
-        if (this.stories === undefined || this.stories.length == 0) {
-            this.stories = this.retrieveMockStories();
+        if (AppSettings_1.VARIABLES.MODE_TEST) {
+            if (this.stories === undefined || this.stories.length == 0) {
+                this.stories = this.retrieveMockStories();
+            }
+        }
+        else {
+            this.retrieveObservableStories();
         }
     };
     StoryComponent.prototype.retrieveMockStories = function () {
@@ -45,7 +49,6 @@ var StoryComponent = (function () {
           );
     }*/
     StoryComponent.prototype.receiveMessage = function (mapBrowserEvent) {
-        // this.x = 222;
         console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
         this.mapBrowserEvent = mapBrowserEvent;
     };

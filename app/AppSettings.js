@@ -4,6 +4,7 @@
 }*/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VARIABLES = {
+    MODE_TEST: true,
     ADD_STORY_FORM_TITLE_2: 'Add story'
 };
 //# sourceMappingURL=AppSettings.js.map

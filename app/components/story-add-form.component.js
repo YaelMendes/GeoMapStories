@@ -24,7 +24,7 @@ var StoryAddFormComponent = (function () {
         this.model = this.resetStory();
     }
     StoryAddFormComponent.prototype.onSubmit = function () {
-        console.log("onSubmit is called !  mapBrowserEvent=" + this.mapBrowserEvent);
+        console.log('onSubmit is called !  mapBrowserEvent=' + this.mapBrowserEvent);
         this.submitted = true;
         this.addStory(this.model);
     };
@@ -33,14 +33,26 @@ var StoryAddFormComponent = (function () {
         if (!story.description || !story.address || !story.begin) {
             return;
         }
-        story.address.coordinate = new coordinate_1.Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], "EPSG:3857");
-        this.dataService.addObsStory(story)
-            .subscribe(function (st) { return _this.stories.push(st); }, function (err) { console.log(err); });
+        story.address.coordinate = new coordinate_1.Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], 'EPSG:3857');
+        if (AppSettings_1.VARIABLES.MODE_TEST) {
+            // simulate generated id since nothing is persisted
+            story.id = this.generateId();
+            this.stories.push(story);
+        }
+        else {
+            this.dataService.addObsStory(story)
+                .subscribe(function (st) { return _this.stories.push(st); }, function (err) {
+                console.log(err);
+            });
+        }
         // prepare for a new story
         this.model = this.resetStory();
     };
+    StoryAddFormComponent.prototype.generateId = function () {
+        return Math.random().toString(36);
+    };
     StoryAddFormComponent.prototype.resetStory = function () {
-        return new story_1.Story("", new address_1.Address(""), new Date());
+        return new story_1.Story('', new address_1.Address(''), new Date());
     };
     return StoryAddFormComponent;
 }());

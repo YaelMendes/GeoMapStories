@@ -13,7 +13,6 @@ var core_1 = require("@angular/core");
 var StoryNgxOlComponent = (function () {
     function StoryNgxOlComponent() {
         this.messageEvent = new core_1.EventEmitter();
-        this.x = 1000;
         this.zoom = 15;
         this.opacity = 1.0;
         this.width = 5;
@@ -37,7 +36,6 @@ var StoryNgxOlComponent = (function () {
     StoryNgxOlComponent.prototype.fillCoordinates = function (mapBrowserEvent) {
         console.log(mapBrowserEvent);
         console.log(mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
-        // this.x = event.coordinate[0];
         this.messageEvent.emit(mapBrowserEvent);
     };
     return StoryNgxOlComponent;
