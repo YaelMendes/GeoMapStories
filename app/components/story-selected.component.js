@@ -27,7 +27,7 @@ ShowStoryComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'selected-story',
-        template: " \n     <div>\n     <label>selected story:</label><br/>\n      <label>oneStory description: </label><span>{{selectedStory?.description}}</span>\n      <label>oneStory address: </label><span>{{selectedStory?.address.firstLine}}</span>\n      <label>oneStory begin: </label><span>{{selectedStory?.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </div>\n    ",
+        template: " \n     <div>\n     <label>selected story:</label><br/>\n      <label>oneStory title: </label><span>{{selectedStory?.title}}</span>\n      <label>oneStory description: </label><span>{{selectedStory?.description}}</span>\n      <label>oneStory address: </label><span>{{selectedStory?.address.realAddress}}</span>\n      <label>oneStory begin: </label><span>{{selectedStory?.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </div>\n    ",
     })
 ], ShowStoryComponent);
 exports.ShowStoryComponent = ShowStoryComponent;

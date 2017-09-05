@@ -17,6 +17,7 @@ import {MapBrowserEvent} from 'openlayers';
 })
 export class StoryComponent implements OnInit {
   stories: Story[];
+  story : Story;
 
   mapBrowserEvent: MapBrowserEvent;
 

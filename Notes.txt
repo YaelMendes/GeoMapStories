@@ -2,3 +2,9 @@
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 https://www.w3schools.com/cssref/tryit.asp?filename=trycss_float
+
+
+https://medium.com/@feloy/deploying-an-i18n-angular-app-with-angular-cli-fc788f17e358
+
+--i18n
+ng serve --aot --i18n-file=app/i18n/messages.en.xlf --locale=en --i18n-format=xlf

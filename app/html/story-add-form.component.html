@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <h1> {{pageTitle}}</h1>
+    <h2>{{pageTitle}}</h2>
 
     <form (ngSubmit)="onSubmit()" #storyForm="ngForm">
 
@@ -42,7 +42,7 @@
     <div>
       <div *ngIf="mapBrowserEvent !== undefined;then display else noDisplay"></div>
       <ng-template #display><h2> {{mapBrowserEvent.coordinate[0]}}, {{mapBrowserEvent.coordinate[1]}}</h2></ng-template>
-      <ng-template #noDisplay> <h2>Please double click on the map to add a story</h2></ng-template>
+      <ng-template #noDisplay> <h2>Please click on the map where you wish to add a story</h2></ng-template>
     </div>
 
   </div>

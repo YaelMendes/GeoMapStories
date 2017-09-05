@@ -34,6 +34,11 @@ var StoryAddFormComponent = (function () {
             return;
         }
         console.log("story=" + story);
+        console.log("this.mapBrowserEvent=" + this.mapBrowserEvent);
+        if (!this.mapBrowserEvent) {
+            //TODO: display message to user: please choose an address by clicking the map to add a story
+            return;
+        }
         story.address.coordinate = new coordinate_1.Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], 'EPSG:3857');
         if (AppSettings_1.VARIABLES.MODE_TEST) {
             // simulate generated id since nothing is persisted
