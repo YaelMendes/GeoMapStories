@@ -12,10 +12,7 @@ import {MapBrowserEvent} from 'openlayers';
 })
 export class StoryNgxOlComponent {
   @Input() allStories: Story[];
-
   @Output() messageEvent = new EventEmitter<any>();
-
-    x : number = 1000;
 
   public zoom = 15;
   public opacity = 1.0;
@@ -44,8 +41,6 @@ export class StoryNgxOlComponent {
   fillCoordinates(mapBrowserEvent: MapBrowserEvent) {
     console.log(mapBrowserEvent);
     console.log(mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
-
-   // this.x = event.coordinate[0];
 
     this.messageEvent.emit(mapBrowserEvent);
   }

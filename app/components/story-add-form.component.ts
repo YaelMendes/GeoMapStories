@@ -1,9 +1,9 @@
 import {Component, Input, Injectable} from '@angular/core';
-import {Story} from "../objects/story";
-import {Coordinate} from "../objects/coordinate";
-import {Address} from "../objects/address";
-import {DataService} from "../services/data.service";
-import {VARIABLES} from "../AppSettings";
+import {Story} from '../objects/story';
+import {Coordinate} from '../objects/coordinate';
+import {Address} from '../objects/address';
+import {DataService} from '../services/data.service';
+import {VARIABLES} from '../AppSettings';
 
 import {MapBrowserEvent} from 'openlayers';
 
@@ -27,28 +27,42 @@ export class StoryAddFormComponent {
   }
 
   onSubmit() {
-    console.log("onSubmit is called !  mapBrowserEvent=" + this.mapBrowserEvent);
+    console.log('onSubmit is called !  mapBrowserEvent=' + this.mapBrowserEvent);
 
     this.submitted = true;
     this.addStory(this.model);
   }
 
   addStory(story: Story): void {
-    if (!story.description || !story.address || !story.begin) { return; }
+    if (!story.description || !story.address || !story.begin) {
+      return;
+    }
 
-    story.address.coordinate = new Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], "EPSG:3857");
+    story.address.coordinate = new Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], 'EPSG:3857');
 
-    this.dataService.addObsStory(story)
-      .subscribe(
+    if (VARIABLES.MODE_TEST) {
+      // simulate generated id since nothing is persisted
+      story.id = this.generateId();
+      this.stories.push(story);
+    } else {
+      this.dataService.addObsStory(story)
+        .subscribe(
           st => this.stories.push(st),
-          err => { console.log(err);}
+          err => {
+            console.log(err);
+          }
         );
+    }
 
     // prepare for a new story
     this.model = this.resetStory();
   }
 
+  private generateId(): string {
+    return Math.random().toString(36);
+  }
+
   private resetStory() {
-    return new Story("", new Address(""), new Date());
+    return new Story('', new Address(''), new Date());
   }
 }

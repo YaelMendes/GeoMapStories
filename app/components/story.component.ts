@@ -5,7 +5,7 @@ import {Story} from "../objects/story";
 import {Http} from "@angular/http";
 import {Router} from "@angular/router";
 import {InMemoryDataService} from "../services/in-memory-data.service"
-
+import {VARIABLES} from "../AppSettings";
 import {StoryNgxOlComponent} from "./story-ngx-ol.component";
 
 import {MapBrowserEvent} from 'openlayers';
@@ -26,17 +26,18 @@ export class StoryComponent implements OnInit /*, AfterViewInit */{
   }
 
   ngOnInit(): void {
-  //  this.retrieveOneObservableStories();
-  //  this.retrieveObservableStories();
-
     console.log("-- ngOnInit ");
 
-    if (this.stories === undefined || this.stories.length == 0) {
-      this.stories = this.retrieveMockStories();
+    if (VARIABLES.MODE_TEST) {
+      if (this.stories === undefined || this.stories.length == 0) {
+        this.stories = this.retrieveMockStories();
+      }
+    } else {
+      this.retrieveObservableStories();
     }
   }
 
-  retrieveMockStories() : Story[] {//
+  retrieveMockStories() : Story[] {
 
     let storiees = InMemoryDataService.getSomeStories();
     return storiees;
@@ -58,7 +59,6 @@ export class StoryComponent implements OnInit /*, AfterViewInit */{
   }*/
 
   receiveMessage(mapBrowserEvent: MapBrowserEvent) {
-    // this.x = 222;
     console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
 
     this.mapBrowserEvent = mapBrowserEvent;
