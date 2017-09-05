@@ -15,11 +15,9 @@ import {MapBrowserEvent} from 'openlayers';
   selector: 'my-stories',
   templateUrl: '../html/story.component.html',
 })
-export class StoryComponent implements OnInit /*, AfterViewInit */{
+export class StoryComponent implements OnInit {
   stories: Story[];
- // story: Story;
 
- // x: number;
   mapBrowserEvent: MapBrowserEvent;
 
   constructor(private dataService: DataService, private router: Router) {

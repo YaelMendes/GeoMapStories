@@ -16,9 +16,9 @@ var InMemoryDataService = (function () {
     };
     InMemoryDataService.getSomeStories = function () {
         var st1, st2, st3;
-        st1 = new story_1.Story("descr1", new address_1.Address("addr11"), new Date());
-        st2 = new story_1.Story("descr2", new address_1.Address("addr2"), new Date());
-        st3 = new story_1.Story("descr3333", new address_1.Address("addr3"), new Date());
+        st1 = new story_1.Story("st1", "descr1", new address_1.Address("addr11"), new Date());
+        st2 = new story_1.Story("st2", "descr2", new address_1.Address("addr2"), new Date());
+        st3 = new story_1.Story("st3", "descr3333", new address_1.Address("addr3"), new Date());
         st1.address.coordinate = new coordinate_1.Coordinate(692249.10, 5804715.26, "EPSG:3857");
         st2.address.coordinate = new coordinate_1.Coordinate(692470.47, 5804715.26, "EPSG:3857");
         st3.address.coordinate = new coordinate_1.Coordinate(692050.37, 5804715.26, "EPSG:3857");

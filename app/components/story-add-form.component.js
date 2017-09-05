@@ -19,7 +19,7 @@ var openlayers_1 = require("openlayers");
 var StoryAddFormComponent = (function () {
     function StoryAddFormComponent(dataService) {
         this.dataService = dataService;
-        this.title = AppSettings_1.VARIABLES.ADD_STORY_FORM_TITLE_2;
+        this.pageTitle = AppSettings_1.VARIABLES.ADD_STORY_FORM_TITLE_2;
         this.submitted = false;
         this.model = this.resetStory();
     }
@@ -30,9 +30,10 @@ var StoryAddFormComponent = (function () {
     };
     StoryAddFormComponent.prototype.addStory = function (story) {
         var _this = this;
-        if (!story.description || !story.address || !story.begin) {
+        if (!story.title || !story.description || !story.address || !story.begin) {
             return;
         }
+        console.log("story=" + story);
         story.address.coordinate = new coordinate_1.Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], 'EPSG:3857');
         if (AppSettings_1.VARIABLES.MODE_TEST) {
             // simulate generated id since nothing is persisted
@@ -52,7 +53,7 @@ var StoryAddFormComponent = (function () {
         return Math.random().toString(36);
     };
     StoryAddFormComponent.prototype.resetStory = function () {
-        return new story_1.Story('', new address_1.Address(''), new Date());
+        return new story_1.Story('', '', new address_1.Address(''), new Date());
     };
     return StoryAddFormComponent;
 }());

@@ -16,7 +16,7 @@ export class StoryAddFormComponent {
   @Input() stories: Story[];
   @Input() mapBrowserEvent: MapBrowserEvent;
 
-  title = VARIABLES.ADD_STORY_FORM_TITLE_2;
+  pageTitle = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
   submitted = false;
 
@@ -34,9 +34,11 @@ export class StoryAddFormComponent {
   }
 
   addStory(story: Story): void {
-    if (!story.description || !story.address || !story.begin) {
+    if (!story.title || !story.description || !story.address || !story.begin) {
       return;
     }
+
+    console.log("story=" + story);
 
     story.address.coordinate = new Coordinate(this.mapBrowserEvent.coordinate[0], this.mapBrowserEvent.coordinate[1], 'EPSG:3857');
 
@@ -63,6 +65,6 @@ export class StoryAddFormComponent {
   }
 
   private resetStory() {
-    return new Story('', new Address(''), new Date());
+    return new Story('', '', new Address(''), new Date());
   }
 }
