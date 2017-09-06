@@ -65,6 +65,7 @@ StoryComponent = __decorate([
         moduleId: module.id,
         selector: 'my-stories',
         templateUrl: '../html/story.component.html',
+        styleUrls: ['../css/story.component.css']
     }),
     __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router])
 ], StoryComponent);

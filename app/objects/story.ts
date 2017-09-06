@@ -7,6 +7,7 @@ export class Story {
   public description: string
 
   public name: string
+  public group: string;
 
   public address: Address
   public begin: Date

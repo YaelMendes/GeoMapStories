@@ -14,6 +14,7 @@ import {MapBrowserEvent} from 'openlayers';
   moduleId: module.id,
   selector: 'my-stories',
   templateUrl: '../html/story.component.html',
+  styleUrls: ['../css/story.component.css']
 })
 export class StoryComponent implements OnInit {
   stories: Story[];
