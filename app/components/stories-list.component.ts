@@ -11,7 +11,7 @@ import {Http} from "@angular/http";
      <label>stories list:</label><br/>
      <li *ngFor="let story of allStories">
        <label>description: </label><span>{{story.description}}</span>
-        <label>address: </label><span>{{story.address.realAddress}}</span>
+       <label>address: </label><span>{{story.address.realAddress}}</span>
        <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>
        <br/>
      </li>

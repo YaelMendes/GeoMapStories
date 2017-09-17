@@ -1,44 +1,58 @@
-<aol-map
-  [width]="'80%'"
-  [height]="'70%'"
-  (onClick)="fillCoordinates($event)">
+<div>
 
-  <aol-interaction-default></aol-interaction-default>
+  <div>
+    <aol-map
+      [width]="'80%'"
+      [height]="'70%'"
+      (onClick)="fillCoordinates($event)">
 
-  <aol-view [zoom]="zoom">
-    <aol-coordinate [x]="692249.47" [y]="5804715.26" [srid]="'EPSG:3857'"></aol-coordinate>
-  </aol-view>
+      <aol-interaction-default></aol-interaction-default>
 
-  <aol-layer-tile>
-    <aol-source-osm></aol-source-osm>
-  </aol-layer-tile>
+      <aol-view [zoom]="zoom">
+        <aol-coordinate [x]="692249.47" [y]="5804715.26" [srid]="'EPSG:3857'"></aol-coordinate>
+      </aol-view>
 
-  <aol-layer-vector [opacity]="opacity">
-    <aol-source-vector>
-      <li *ngFor="let story of allStories">
-        <aol-feature>
-          <aol-geometry-point>
-            <aol-coordinate [x]="story.address.coordinate.x" [y]="story.address.coordinate.y"
-                            [srid]="story.address.coordinate.srid"></aol-coordinate>
-          </aol-geometry-point>
-          <aol-style>
-            <aol-style-circle [radius]="5">
-              <aol-style-stroke [color]="'black'" [width]="width"></aol-style-stroke>
-              <aol-style-fill [color]="'red'"></aol-style-fill>
-            </aol-style-circle>
-          </aol-style>
-        </aol-feature>
-      </li>
-    </aol-source-vector>
-  </aol-layer-vector>
+      <aol-layer-tile>
+        <aol-source-osm></aol-source-osm>
+      </aol-layer-tile>
 
-</aol-map>
+      <aol-layer-vector [opacity]="opacity">
+        <aol-source-vector>
+          <div *ngFor="let story of allStories">
+            <aol-feature>
+              <aol-geometry-point>
+                <aol-coordinate [x]="story.address.coordinate.x" [y]="story.address.coordinate.y"
+                                [srid]="story.address.coordinate.srid"></aol-coordinate>
+              </aol-geometry-point>
+              <aol-style>
+                <aol-style-circle [radius]="5">
+                  <aol-style-stroke [color]="'black'" [width]="width"></aol-style-stroke>
+                  <aol-style-fill [color]="'red'"></aol-style-fill>
+                </aol-style-circle>
+              </aol-style>
+            </aol-feature>
+          </div>
+        </aol-source-vector>
+      </aol-layer-vector>
+
+    </aol-map>
+  </div>
+
+  <div id="map-navigation-bar">
+    <div>
 
 
-<span>opacity:</span>
-<button (click)="increaseOpacity()">+</button>
-<button (click)="decreaseOpacity()">-</button><br>
-<span>zoom:</span>
-<button (click)="increaseZoom()">+</button>
-<button (click)="decreaseZoom()">-</button><br>
+    </div>
+    <div>
+      <span>opacity:</span>
+      <button (click)="increaseOpacity()">+</button>
+      <button (click)="decreaseOpacity()">-</button>
+    </div>
+    <div>
+      <span>zoom:</span>
+      <button (click)="increaseZoom()">+</button>
+      <button (click)="decreaseZoom()">-</button>
+    </div>
+  </div>
 
+</div>

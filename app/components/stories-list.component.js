@@ -27,7 +27,7 @@ StoryListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'all-stories',
-        template: " \n     <div>\n     <label>stories list:</label><br/>\n     <li *ngFor=\"let story of allStories\">\n       <label>description: </label><span>{{story.description}}</span>\n        <label>address: </label><span>{{story.address.realAddress}}</span>\n       <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </li>\n     </div>\n    ",
+        template: " \n     <div>\n     <label>stories list:</label><br/>\n     <li *ngFor=\"let story of allStories\">\n       <label>description: </label><span>{{story.description}}</span>\n       <label>address: </label><span>{{story.address.realAddress}}</span>\n       <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </li>\n     </div>\n    ",
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], StoryListComponent);
