@@ -24,7 +24,7 @@ export class StoryNgxOlComponent implements OnInit {
   ngOnInit(): void {
 
     if(this.layer === undefined) {
-      this.layer = 'geoportal'; //'osm';
+      this.layer = 'osm'; //'osm';
     }
 
   }

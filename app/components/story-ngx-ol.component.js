@@ -19,7 +19,7 @@ var StoryNgxOlComponent = (function () {
     }
     StoryNgxOlComponent.prototype.ngOnInit = function () {
         if (this.layer === undefined) {
-            this.layer = 'geoportal'; //'osm';
+            this.layer = 'osm'; //'osm';
         }
     };
     StoryNgxOlComponent.prototype.changeLayer = function () {

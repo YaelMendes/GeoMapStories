@@ -80,8 +80,17 @@ StoryMapComponent = __decorate([
         moduleId: module.id,
         selector: 'story-map',
         //template: "<div id='map'></div>"
-        template: "\n  <aol-map [width]=\"'500px'\" [height]=\"'300'\">\n    <aol-view [zoom]=\"2\">\n        <aol-coordinate [x]=\"5.795122\" [y]=\"45.210225\" [srid]=\"'EPSG:4326'\"></aol-coordinate>\n    </aol-view>\n    <aol-layer-tile>\n        <aol-source-osm></aol-source-osm>\n    </aol-layer-tile>\n</aol-map>\n  "
-        // templateUrl: '../html/story-map.component.html',
+        /* template: `
+         <aol-map [width]="'500px'" [height]="'300'">
+           <aol-view [zoom]="2">
+               <aol-coordinate [x]="5.795122" [y]="45.210225" [srid]="'EPSG:4326'"></aol-coordinate>
+           </aol-view>
+           <aol-layer-tile>
+               <aol-source-osm></aol-source-osm>
+           </aol-layer-tile>
+       </aol-map>
+         `*/
+        templateUrl: '../html/story-map.component.html',
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], StoryMapComponent);
