@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import {Story} from "../objects/story";
 
@@ -10,13 +10,28 @@ import {MapBrowserEvent} from 'openlayers';
   templateUrl: '../html/story-ngx-ol.component.html',
   styleUrls: ['../css/story-ngx-ol.component.css']
 })
-export class StoryNgxOlComponent {
+export class StoryNgxOlComponent implements OnInit {
+
   @Input() allStories: Story[];
   @Output() messageEvent = new EventEmitter<any>();
 
   public zoom = 15;
   public opacity = 1.0;
   public width = 5;
+
+  @Input() layer: string;  // osm / wmts
+
+  ngOnInit(): void {
+
+    if(this.layer === undefined) {
+      this.layer = 'geoportal'; //'osm';
+    }
+
+  }
+
+  changeLayer() {
+    //TODO
+  }
 
   increaseZoom() {
     this.zoom  = Math.min(this.zoom + 1, 18);

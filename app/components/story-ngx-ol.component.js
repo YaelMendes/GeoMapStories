@@ -17,6 +17,14 @@ var StoryNgxOlComponent = (function () {
         this.opacity = 1.0;
         this.width = 5;
     }
+    StoryNgxOlComponent.prototype.ngOnInit = function () {
+        if (this.layer === undefined) {
+            this.layer = 'geoportal'; //'osm';
+        }
+    };
+    StoryNgxOlComponent.prototype.changeLayer = function () {
+        //TODO
+    };
     StoryNgxOlComponent.prototype.increaseZoom = function () {
         this.zoom = Math.min(this.zoom + 1, 18);
         console.log('zoom: ', this.zoom);
@@ -48,6 +56,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], StoryNgxOlComponent.prototype, "messageEvent", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], StoryNgxOlComponent.prototype, "layer", void 0);
 StoryNgxOlComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
