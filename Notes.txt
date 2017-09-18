@@ -152,3 +152,34 @@ var map = new ol.Map({
         zoom: 10
       })
     });
+
+--------
+
+MINIMAL CODE FOR OL:
+
+var map = new ol.Map({
+    view: new ol.View({ ... }),
+    layers: [
+        new ol.layer.Tile({
+            source : new ol.source.WMTS({
+                url: "url du wmts"
+                layer: "nom de la couche"
+                matrixSet: "nom de la pyramide d'images"
+                format: "format de l'image retournée",
+                style: "normal",
+                tileGrid : new ol.tilegrid.WMTS({
+                    origin: [...],
+                    // topLeftCorner
+                    resolutions: [...], // résolutions
+                    matrixIds: [...]
+                    // ids des TileMatrix
+                })
+            })
+        })
+    ],
+    target: "viewerDiv", // id de l"élément HTML
+    view: new ol.View({
+    center: [260516,6246918],
+    zoom: 10
+  })
+});
