@@ -183,3 +183,12 @@ var map = new ol.Map({
     zoom: 10
   })
 });
+
+
+http://wxs.ign.fr/2mqbg0z6cx7ube8gsou10nrt/geoportail/wmts?layer=ORTHOIMAGERY.ORTHOPHOTOS&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix=18&TileCol=-2825&TileRow=-2892
+Request Method:GET
+Status Code:404 Not Found
+
+<ExceptionReport>
+    <Exception exceptionCode="MissingRights">Wrong referer or wrong IP Adress or wrong User-Agent</Exception>
+</ExceptionReport>
