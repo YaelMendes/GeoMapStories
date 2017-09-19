@@ -3,14 +3,14 @@
   <div>
     <aol-map
       id="aol-map"
-      [width]="'3%'"
-      [height]="'3%'"
+      [width]="'10%'"
+      [height]="'10%'"
       (onClick)="fillCoordinates($event)">
 
       <aol-interaction-default></aol-interaction-default>
 
       <aol-view [zoom]="zoom">
-        <aol-coordinate [x]="260516" [y]="6246918" [srid]="'EPSG:3857'"></aol-coordinate>
+        <aol-coordinate [x]="692249.47" [y]="5804715.26"  [srid]="'EPSG:3857'"></aol-coordinate>
       </aol-view>
 
 
@@ -26,7 +26,6 @@
                 [format]="format"
                 [style]="style"
                 [attributions]="attributions"
-                [crossOrigin]="crossOrigin"
               >
                 <aol-tilegrid-wmts
                   [resolutions]="resolutions"
