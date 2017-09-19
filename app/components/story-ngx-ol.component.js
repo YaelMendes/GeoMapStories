@@ -18,12 +18,12 @@ var StoryNgxOlComponent = (function () {
         this.width = 5;
     }
     StoryNgxOlComponent.prototype.ngOnInit = function () {
-        if (this.layer === undefined) {
-            this.layer = 'geoportal'; //'osm';
+        if (this.source === undefined) {
+            this.source = 'geoportal'; //'osm';
         }
         var myIgnKey = 'sx4johfuj8woxxvrphfuzzd0'; //''2mqbg0z6cx7ube8gsou10nrt';
         this.url = "http://wxs.ign.fr/" + myIgnKey + "/geoportail/wmts";
-        this.__layer = "GEOGRAPHICALGRIDSYSTEMS.MAPS"; //"ORTHOIMAGERY.ORTHOPHOTOS";
+        this.layer = "GEOGRAPHICALGRIDSYSTEMS.MAPS"; //"ORTHOIMAGERY.ORTHOPHOTOS";
         this.matrixSet = "PM";
         this.format = "image/jpeg";
         this.style = "normal";
@@ -69,7 +69,7 @@ __decorate([
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], StoryNgxOlComponent.prototype, "layer", void 0);
+], StoryNgxOlComponent.prototype, "source", void 0);
 StoryNgxOlComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

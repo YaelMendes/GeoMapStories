@@ -19,12 +19,12 @@ export class StoryNgxOlComponent implements OnInit {
   public opacity = 1.0;
   public width = 5;
 
-  @Input() layer: string;  // osm / wmts
+  @Input() source: string;  // osm / wmts
 
 
   // test for wmts
     public url: string;
-    public __layer: string //""ORTHOIMAGERY.ORTHOPHOTOS";
+    public layer: string //""ORTHOIMAGERY.ORTHOPHOTOS";
     public matrixSet: "PM";
     public format: "image/jpeg";
     public style: "normal";
@@ -38,14 +38,14 @@ export class StoryNgxOlComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(this.layer === undefined) {
-      this.layer = 'geoportal'; //'osm';
+    if(this.source === undefined) {
+      this.source = 'geoportal'; //'osm';
     }
 
     let myIgnKey = 'sx4johfuj8woxxvrphfuzzd0'; //''2mqbg0z6cx7ube8gsou10nrt';
 
     this.url= "http://wxs.ign.fr/"+myIgnKey+"/geoportail/wmts";
-    this.__layer= "GEOGRAPHICALGRIDSYSTEMS.MAPS"; //"ORTHOIMAGERY.ORTHOPHOTOS";
+    this.layer= "GEOGRAPHICALGRIDSYSTEMS.MAPS"; //"ORTHOIMAGERY.ORTHOPHOTOS";
     this.matrixSet= "PM";
     this.format= "image/jpeg";
     this.style= "normal";

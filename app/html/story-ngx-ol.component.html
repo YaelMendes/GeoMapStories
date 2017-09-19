@@ -15,13 +15,14 @@
 
 
       <div>
-        <div *ngIf="layer === 'geoportal';then  geoportal else osm"></div>
+        <aol-layer-tile>
+
+        <div *ngIf="source === 'geoportal';then  geoportal else osm"></div>
 
         <ng-template #geoportal>
-           <aol-layer-tile>
               <aol-source-tilewmts
                 [url]="url"
-                [layer]="__layer"
+                [layer]="layer"
                 [matrixSet]="matrixSet"
                 [format]="format"
                 [style]="style"
@@ -33,15 +34,13 @@
                   [origin]="origin">
                 </aol-tilegrid-wmts>
               </aol-source-tilewmts>
-            </aol-layer-tile>
         </ng-template>
 
         <ng-template #osm>
-          <aol-layer-tile>
             <aol-source-osm></aol-source-osm>
-          </aol-layer-tile>
         </ng-template>
 
+        </aol-layer-tile>
       </div>
 
       <aol-layer-vector [opacity]="opacity">
