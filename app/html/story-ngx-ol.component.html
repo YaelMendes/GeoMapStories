@@ -67,10 +67,6 @@
 
   <div id="map-navigation-bar">
     <div>
-
-
-    </div>
-    <div>
       <span  i18n="@@pointsOpacityId">Points_opacity:</span>
       <button (click)="increaseOpacity()">+</button>
       <button (click)="decreaseOpacity()">-</button>
@@ -79,6 +75,11 @@
       <span  i18n="@@mapZoomId">Map_zoom:</span>
       <button (click)="increaseZoom()">+</button>
       <button (click)="decreaseZoom()">-</button>
+    </div>
+    <div>
+      <span   i18n="@@chooseSourceId">Choose_source:</span>
+      <button i18n="@@chooseSourceIdGeo" (click)="selectGeoportalSource()">Geoportal_source</button>
+      <button i18n="@@chooseSourceIdOsm" (click)="selectOsmSource()">OSM_source</button>
     </div>
   </div>
 

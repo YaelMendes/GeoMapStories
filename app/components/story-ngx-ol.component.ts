@@ -56,8 +56,14 @@ export class StoryNgxOlComponent implements OnInit {
     this.origin=   [-20037508,20037508];
   }
 
-  changeLayer() {
-    //TODO
+  increaseOpacity() {
+    this.opacity  = Math.min(this.opacity + 0.1, 1);
+    console.log('opacity: ', this.opacity);
+  }
+
+  decreaseOpacity() {
+    this.opacity  = Math.max(this.opacity - 0.1, 0);
+    console.log('opacity: ', this.opacity);
   }
 
   increaseZoom() {
@@ -70,14 +76,12 @@ export class StoryNgxOlComponent implements OnInit {
     console.log('zoom: ', this.zoom);
   }
 
-  increaseOpacity() {
-    this.opacity  = Math.min(this.opacity + 0.1, 1);
-    console.log('opacity: ', this.opacity);
+  selectGeoportalSource(){
+    this.source = 'geoportal';
   }
 
-  decreaseOpacity() {
-    this.opacity  = Math.max(this.opacity - 0.1, 0);
-    console.log('opacity: ', this.opacity);
+  selectOsmSource(){
+    this.source = 'osm';
   }
 
   fillCoordinates(mapBrowserEvent: MapBrowserEvent) {

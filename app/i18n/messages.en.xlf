@@ -23,6 +23,20 @@
         <target>Map zoom</target>
       </trans-unit>
 
+      <trans-unit id="chooseSourceId" datatype="html">
+        <source>Choose_source</source>
+        <target>Source</target>
+      </trans-unit>
+
+      <trans-unit id="chooseSourceIdGeo" datatype="html">
+        <source>Geoportal_source</source>
+        <target>Géoportal</target>
+      </trans-unit>
+
+      <trans-unit id="chooseSourceIdOsm" datatype="html">
+        <source>OSM_source</source>
+        <target>OpenStreetMap</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

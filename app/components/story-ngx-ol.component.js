@@ -32,8 +32,13 @@ var StoryNgxOlComponent = (function () {
         this.matrixIds = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
         this.origin = [-20037508, 20037508];
     };
-    StoryNgxOlComponent.prototype.changeLayer = function () {
-        //TODO
+    StoryNgxOlComponent.prototype.increaseOpacity = function () {
+        this.opacity = Math.min(this.opacity + 0.1, 1);
+        console.log('opacity: ', this.opacity);
+    };
+    StoryNgxOlComponent.prototype.decreaseOpacity = function () {
+        this.opacity = Math.max(this.opacity - 0.1, 0);
+        console.log('opacity: ', this.opacity);
     };
     StoryNgxOlComponent.prototype.increaseZoom = function () {
         this.zoom = Math.min(this.zoom + 1, 18);
@@ -43,13 +48,11 @@ var StoryNgxOlComponent = (function () {
         this.zoom = Math.max(this.zoom - 1, 1);
         console.log('zoom: ', this.zoom);
     };
-    StoryNgxOlComponent.prototype.increaseOpacity = function () {
-        this.opacity = Math.min(this.opacity + 0.1, 1);
-        console.log('opacity: ', this.opacity);
+    StoryNgxOlComponent.prototype.selectGeoportalSource = function () {
+        this.source = 'geoportal';
     };
-    StoryNgxOlComponent.prototype.decreaseOpacity = function () {
-        this.opacity = Math.max(this.opacity - 0.1, 0);
-        console.log('opacity: ', this.opacity);
+    StoryNgxOlComponent.prototype.selectOsmSource = function () {
+        this.source = 'osm';
     };
     StoryNgxOlComponent.prototype.fillCoordinates = function (mapBrowserEvent) {
         console.log(mapBrowserEvent);
