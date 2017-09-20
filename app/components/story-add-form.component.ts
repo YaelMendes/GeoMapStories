@@ -1,5 +1,6 @@
 import {Component, Input, Injectable} from '@angular/core';
 import {Story} from '../objects/story';
+import {User} from '../objects/user';
 import {Coordinate} from '../objects/coordinate';
 import {Address} from '../objects/address';
 import {DataService} from '../services/data.service';
@@ -72,6 +73,6 @@ export class StoryAddFormComponent {
   }
 
   private resetStory() {
-    return new Story('', '', new Address(''), new Date());
+    return new Story('', new User(''), '', new Address(''), new Date());
   }
 }

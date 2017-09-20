@@ -13,9 +13,10 @@ export class Story {
   public begin: Date
   public end: Date
 
-  constructor(title: string, description: string, address: Address, begin: Date)
+  constructor(title: string, user: User, description: string, address: Address, begin: Date)
   {
     this.title = title;
+    this.user = user;
     this.description = description;
     this.address = address;
     this.begin = begin;

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var story_1 = require("../objects/story");
+var user_1 = require("../objects/user");
 var coordinate_1 = require("../objects/coordinate");
 var address_1 = require("../objects/address");
 var data_service_1 = require("../services/data.service");
@@ -58,7 +59,7 @@ var StoryAddFormComponent = (function () {
         return Math.random().toString(36);
     };
     StoryAddFormComponent.prototype.resetStory = function () {
-        return new story_1.Story('', '', new address_1.Address(''), new Date());
+        return new story_1.Story('', new user_1.User(''), '', new address_1.Address(''), new Date());
     };
     return StoryAddFormComponent;
 }());
