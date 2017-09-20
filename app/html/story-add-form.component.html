@@ -13,6 +13,14 @@
       </div>
 
       <div class="form-group">
+        <label for="title">author</label>
+        <input type="text" class="form-control" id="author"
+               required
+               [(ngModel)]="model.user.name" name="author"
+               #name="ngModel">
+      </div>
+
+      <div class="form-group">
         <label for="description">description</label>
         <input type="text" class="form-control" id="description"
                required

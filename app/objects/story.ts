@@ -1,4 +1,5 @@
-import {Address} from "./address";
+import {Address} from './address';
+import {User} from './user';
 
 export class Story {
   id: string
@@ -6,8 +7,7 @@ export class Story {
   public title: string
   public description: string
 
-  public name: string
-  public group: string;
+  public user: User;
 
   public address: Address
   public begin: Date
