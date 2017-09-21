@@ -37,6 +37,46 @@
         <source>OSM_source</source>
         <target>OpenStreetMap</target>
       </trans-unit>
+
+      <trans-unit id="pageTitleId" datatype="html">
+        <source>Page_Title</source>
+        <target></target>
+      </trans-unit>
+
+      <trans-unit id="titleId" datatype="html">
+        <source>title</source>
+        <target>Title</target>
+      </trans-unit>
+
+      <trans-unit id="authorId" datatype="html">
+        <source>author</source>
+        <target>Author</target>
+      </trans-unit>
+
+      <trans-unit id="descriptionId" datatype="html">
+        <source>description</source>
+        <target>Description</target>
+      </trans-unit>
+
+      <trans-unit id="addressId" datatype="html">
+        <source>address</source>
+        <target>Address</target>
+      </trans-unit>
+
+      <trans-unit id="beginId" datatype="html">
+        <source>begin</source>
+        <target>Beginning</target>
+      </trans-unit>
+
+      <trans-unit id="submitId" datatype="html">
+        <source>submit</source>
+        <target>Create</target>
+      </trans-unit>
+
+      <trans-unit id="infoCoordinateClickId" datatype="html">
+        <source>infoCoordinateClick</source>
+        <target>Please click on the map where you wish to add a story</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

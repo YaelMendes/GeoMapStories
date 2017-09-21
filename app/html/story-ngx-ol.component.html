@@ -10,35 +10,36 @@
       <aol-interaction-default></aol-interaction-default>
 
       <aol-view [zoom]="zoom">
-        <aol-coordinate [x]="692249.47" [y]="5804715.26"  [srid]="'EPSG:3857'"></aol-coordinate>
+        <aol-coordinate [x]="692249.47" [y]="5804715.26" [srid]="'EPSG:3857'"></aol-coordinate>
       </aol-view>
 
 
       <div>
         <aol-layer-tile>
 
-        <div *ngIf="source === 'geoportal';then  geoportal else osm"></div>
+          <div *ngIf="source === 'geoportal';then  geoportal"></div>
+          <div *ngIf="source === 'osm';then  osm"></div>
 
-        <ng-template #geoportal>
-              <aol-source-tilewmts
-                [url]="url"
-                [layer]="layer"
-                [matrixSet]="matrixSet"
-                [format]="format"
-                [style]="style"
-                [attributions]="attributions"
-              >
-                <aol-tilegrid-wmts
-                  [resolutions]="resolutions"
-                  [matrixIds]="matrixIds"
-                  [origin]="origin">
-                </aol-tilegrid-wmts>
-              </aol-source-tilewmts>
-        </ng-template>
+          <ng-template #geoportal>
+            <aol-source-tilewmts
+              [url]="url"
+              [layer]="layer"
+              [matrixSet]="matrixSet"
+              [format]="format"
+              [style]="style"
+              [attributions]="attributions"
+            >
+              <aol-tilegrid-wmts
+                [resolutions]="resolutions"
+                [matrixIds]="matrixIds"
+                [origin]="origin">
+              </aol-tilegrid-wmts>
+            </aol-source-tilewmts>
+          </ng-template>
 
-        <ng-template #osm>
+          <ng-template #osm>
             <aol-source-osm></aol-source-osm>
-        </ng-template>
+          </ng-template>
 
         </aol-layer-tile>
       </div>
@@ -67,17 +68,17 @@
 
   <div id="map-navigation-bar">
     <div>
-      <span  i18n="@@pointsOpacityId">Points_opacity:</span>
+      <span i18n="@@pointsOpacityId">Points_opacity:</span>
       <button (click)="increaseOpacity()">+</button>
       <button (click)="decreaseOpacity()">-</button>
     </div>
     <div>
-      <span  i18n="@@mapZoomId">Map_zoom:</span>
+      <span i18n="@@mapZoomId">Map_zoom:</span>
       <button (click)="increaseZoom()">+</button>
       <button (click)="decreaseZoom()">-</button>
     </div>
     <div>
-      <span   i18n="@@chooseSourceId">Choose_source:</span>
+      <span i18n="@@chooseSourceId">Choose_source:</span>
       <button i18n="@@chooseSourceIdGeo" (click)="selectGeoportalSource()">Geoportal_source</button>
       <button i18n="@@chooseSourceIdOsm" (click)="selectOsmSource()">OSM_source</button>
     </div>

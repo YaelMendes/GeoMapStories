@@ -1,11 +1,11 @@
 <div class="container">
   <div>
-    <h2>{{pageTitle}}</h2>
+    <h2 i18n="@@pageTitleId" >Page_Title</h2>
 
     <form (ngSubmit)="onSubmit()" #storyForm="ngForm">
 
       <div class="form-group">
-        <label for="title">title</label>
+        <label i18n="@@titleId" for="title">title</label>
         <input type="text" class="form-control" id="title"
                required
                [(ngModel)]="model.title" name="title"
@@ -13,7 +13,7 @@
       </div>
 
       <div class="form-group">
-        <label for="title">author</label>
+        <label i18n="@@authorId" for="author">author</label>
         <input type="text" class="form-control" id="author"
                required
                [(ngModel)]="model.user.name" name="author"
@@ -21,7 +21,7 @@
       </div>
 
       <div class="form-group">
-        <label for="description">description</label>
+        <label i18n="@@descriptionId" for="description">description</label>
         <input type="text" class="form-control" id="description"
                required
                [(ngModel)]="model.description" name="description"
@@ -29,7 +29,7 @@
       </div>
 
       <div class="form-group">
-        <label for="address">address</label>
+        <label i18n="@@addressId" for="address">address</label>
         <input type="text" class="form-control" id="address"
                required
                [(ngModel)]="model.address.realAddress" name="realAddress"
@@ -37,20 +37,20 @@
       </div>
 
       <div class="form-group">
-        <label for="begin">begin</label>
+        <label i18n="@@beginId" for="begin">begin</label>
         <input type="date" class="form-control" id="begin"
                required
                [(ngModel)]="model.begin" name="begin"
                #name="ngModel">
       </div>
 
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button i18n="@@submitId" type="submit" class="btn btn-default">submit</button>
     </form>
 
     <div>
       <div *ngIf="mapBrowserEvent !== undefined;then display else noDisplay"></div>
       <ng-template #display><h2> {{mapBrowserEvent.coordinate[0]}}, {{mapBrowserEvent.coordinate[1]}}</h2></ng-template>
-      <ng-template #noDisplay> <h2>Please click on the map where you wish to add a story</h2></ng-template>
+      <ng-template i18n="@@infoCoordinateClickId"  #noDisplay> <h2>infoCoordinateClick</h2></ng-template>
     </div>
 
   </div>

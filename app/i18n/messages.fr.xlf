@@ -38,6 +38,45 @@
         <target>OpenStreetMap</target>
       </trans-unit>
 
+      <trans-unit id="pageTitleId" datatype="html">
+        <source>Page_Title</source>
+        <target></target>
+      </trans-unit>
+
+      <trans-unit id="titleId" datatype="html">
+        <source>title</source>
+        <target>Titre</target>
+      </trans-unit>
+
+      <trans-unit id="authorId" datatype="html">
+        <source>author</source>
+        <target>Auteur</target>
+      </trans-unit>
+
+      <trans-unit id="descriptionId" datatype="html">
+        <source>description</source>
+        <target>Description</target>
+      </trans-unit>
+
+      <trans-unit id="addressId" datatype="html">
+        <source>address</source>
+        <target>Adresse</target>
+      </trans-unit>
+
+      <trans-unit id="beginId" datatype="html">
+        <source>begin</source>
+        <target>Début</target>
+      </trans-unit>
+
+      <trans-unit id="submitId" datatype="html">
+        <source>submit</source>
+        <target>Créer</target>
+      </trans-unit>
+
+      <trans-unit id="infoCoordinateClickId" datatype="html">
+        <source>infoCoordinateClick</source>
+        <target>Svp cliquez sur le plan pour sélectionner un emplacement</target>
+      </trans-unit>
 
     </body>
   </file>

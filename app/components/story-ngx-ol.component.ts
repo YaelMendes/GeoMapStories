@@ -24,11 +24,11 @@ export class StoryNgxOlComponent implements OnInit {
 
   // test for wmts
     public url: string;
-    public layer: string //""ORTHOIMAGERY.ORTHOPHOTOS";
-    public matrixSet: "PM";
-    public format: "image/jpeg";
-    public style: "normal";
-    public attributions: ["IGN-F/Géoportail"];
+    public layer: string
+    public matrixSet: string;
+    public format: string;
+    public style: string;
+    public attributions: [string];
 
 
   public resolutions:[number];
