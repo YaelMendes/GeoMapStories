@@ -25,6 +25,7 @@ var sandbox_component_1 = require("./components/sandbox.component");
 var stories_map_component_1 = require("./components/stories-map.component");
 var story_ngx_ol_component_1 = require("./components/story-ngx-ol.component");
 var ngx_openlayers_1 = require("ngx-openlayers");
+var menu_bar_component_1 = require("./components/menu-bar.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -50,7 +51,8 @@ AppModule = __decorate([
             stories_map_component_1.StoryMapComponent,
             stories_statistics_component_1.StatisticsComponent,
             sandbox_component_1.SandBoxComponent,
-            story_ngx_ol_component_1.StoryNgxOlComponent
+            story_ngx_ol_component_1.StoryNgxOlComponent,
+            menu_bar_component_1.MenuBarComponent
         ],
         providers: [data_service_1.DataService],
         bootstrap: [app_component_1.AppComponent]

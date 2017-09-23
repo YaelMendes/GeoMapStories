@@ -22,6 +22,7 @@ import {StoryMapComponent} from "./components/stories-map.component";
 import {StoryNgxOlComponent} from "./components/story-ngx-ol.component";
 
 import { AngularOpenlayersModule } from 'ngx-openlayers';
+import {MenuBarComponent} from "./components/menu-bar.component";
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { AngularOpenlayersModule } from 'ngx-openlayers';
     StoryMapComponent,
     StatisticsComponent,
     SandBoxComponent,
-    StoryNgxOlComponent
+    StoryNgxOlComponent,
+    MenuBarComponent
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]

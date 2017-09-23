@@ -5,7 +5,7 @@ import {VARIABLES} from '../AppSettings';
 
 @Component({
   moduleId: module.id,
-  selector: 'story-add-form',
+  selector: 'menu-bar',
   template: `
       <div class="container">
         <form (ngSubmit)="onSubmit()" #storyForm="ngForm">
@@ -14,7 +14,7 @@ import {VARIABLES} from '../AppSettings';
           <label i18n="@@userId" for="name">name</label>
           <input type="text" class="form-control" id="name"
                  required
-                 [(ngModel)]="model.user.name" name="name"
+                 [(ngModel)]="model.name" name="name"
                  #name="ngModel">
         </div>
 
@@ -22,7 +22,7 @@ import {VARIABLES} from '../AppSettings';
           <label i18n="@@passwordId" for="author">password</label>
           <input type="text" class="form-control" id="password"
                  required
-                 [(ngModel)]="model.user.password" name="password"
+                 [(ngModel)]="model.password" name="password"
                  #name="ngModel">
         </div>
 
@@ -31,9 +31,9 @@ import {VARIABLES} from '../AppSettings';
       </div>
             `
 })
-export class StoryAddFormComponent {
+export class MenuBarComponent {
 
-  model: User;
+  model: User = new User('');
   connected: boolean=false;
 
   constructor(private dataService: DataService) {
