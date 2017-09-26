@@ -6,6 +6,8 @@ export const VARIABLES = {
 
   MODE_TEST: true,
 
-  ADD_STORY_FORM_TITLE_2: 'Add story'
+  ADD_STORY_FORM_TITLE_2: 'Add story',
+
+  DEFAULT_USER_MAP_COLOR: 'red'
 
 }
