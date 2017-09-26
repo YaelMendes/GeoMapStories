@@ -78,6 +78,16 @@
         <target>Svp cliquez sur le plan pour sélectionner un emplacement</target>
       </trans-unit>
 
+      <trans-unit id="userId" datatype="html">
+        <source>name</source>
+        <target>Login:</target>
+      </trans-unit>
+
+      <trans-unit id="passwordId" datatype="html">
+        <source>password</source>
+        <target>Mot de passe:</target>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>

@@ -77,6 +77,16 @@
         <source>infoCoordinateClick</source>
         <target>Please click on the map where you wish to add a story</target>
       </trans-unit>
+
+      <trans-unit id="userId" datatype="html">
+        <source>name</source>
+        <target>Login:</target>
+      </trans-unit>
+
+      <trans-unit id="passwordId" datatype="html">
+        <source>password</source>
+        <target>Password:</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
