@@ -68,9 +68,14 @@
         <target>Début</target>
       </trans-unit>
 
+      <trans-unit id="createId" datatype="html">
+        <source>create</source>
+        <target>Créer</target>
+      </trans-unit>
+
       <trans-unit id="submitId" datatype="html">
         <source>submit</source>
-        <target>Créer</target>
+        <target>Login</target>
       </trans-unit>
 
       <trans-unit id="infoCoordinateClickId" datatype="html">
