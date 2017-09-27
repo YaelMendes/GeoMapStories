@@ -59,7 +59,7 @@ var StoryAddFormComponent = (function () {
         return Math.random().toString(36);
     };
     StoryAddFormComponent.prototype.resetStory = function () {
-        return new story_1.Story('', new user_1.User(''), '', new address_1.Address(''), new Date());
+        return new story_1.Story('', new user_1.User(''), '', new address_1.Address(''), new Date(), new Date(), AppSettings_1.VARIABLES.DEFAULT_USER_MAP_COLOR);
     };
     return StoryAddFormComponent;
 }());

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Story = (function () {
-    function Story(title, user, description, address, begin) {
+    function Story(title, user, description, address, begin, end, color) {
         this.title = title;
         this.user = user;
         this.description = description;

@@ -1,4 +1,5 @@
 import {Story} from './story';
+import {Group} from './group';
 import {VARIABLES} from '../AppSettings';
 
 export class User {
@@ -8,7 +9,7 @@ export class User {
 
   public color: string = VARIABLES.DEFAULT_USER_MAP_COLOR;
 
-  public group: string;
+  public group: Group;
 
   public personalStories: Story[];
 
