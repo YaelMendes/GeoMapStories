@@ -74,6 +74,5 @@ export class StoryAddFormComponent {
 
   private resetStory() {
     return new Story('', new User(''), '', new Address(''), new Date(), new Date(), VARIABLES.DEFAULT_USER_MAP_COLOR);
-
   }
 }
