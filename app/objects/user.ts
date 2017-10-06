@@ -13,8 +13,7 @@ export class User {
 
   public personalStories: Story[];
 
-  constructor(name: string)
-  {
+  constructor(name: string) {
     this.name = name;
   }
 

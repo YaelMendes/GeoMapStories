@@ -17,7 +17,7 @@
       <div>
         <aol-layer-tile>
 
-          <div *ngIf="source === 'geoportal';then  geoportal"></div>
+          <div *ngIf="source === 'geoportal';then geoportal"></div>
           <div *ngIf="source === 'osm';then  osm"></div>
 
           <ng-template #geoportal>
@@ -49,8 +49,11 @@
           <div *ngFor="let story of allStories">
             <aol-feature>
               <aol-geometry-point>
-                <aol-coordinate [x]="story.address.coordinate.x" [y]="story.address.coordinate.y"
-                                [srid]="story.address.coordinate.srid"></aol-coordinate>
+                <aol-coordinate [x]="story.address.coordinate.x"
+                                [y]="story.address.coordinate.y"
+                                [srid]="story.address.coordinate.srid">
+
+                </aol-coordinate>
               </aol-geometry-point>
               <aol-style>
                 <aol-style-circle [radius]="5">

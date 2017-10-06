@@ -7,6 +7,7 @@ var coordinate_1 = require("../objects/coordinate");
 var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }
+    // unused
     InMemoryDataService.prototype.createDb = function () {
         var storiesList = [
             { id: "1", description: "birth", address: 'place Vendome 75000 Paris France', begin: '1977-10-02' },

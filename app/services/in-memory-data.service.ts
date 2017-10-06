@@ -6,8 +6,9 @@ import {User} from "../objects/user";
 import {Coordinate} from "../objects/coordinate";
 
 export class InMemoryDataService implements InMemoryDbService {
-  createDb() {
 
+  // unused
+  createDb() {
     let storiesList = [
       {id: "1", description: "birth", address: 'place Vendome 75000 Paris France', begin: '1977-10-02'},
       {id: "2", description: "this is a short descr", address: 'place Vendome 75000 Paris France', begin: '1977-10-02'},
