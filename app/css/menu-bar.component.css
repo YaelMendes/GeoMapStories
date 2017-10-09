@@ -1,12 +1,10 @@
 
-
-
-#map-navigation-bar {
+#menu-bar {
   display: flex;
   justify-content: space-between;
 }
 
-#map-navigation-bar > div {
+#menu-bar > div {
   width: 120px;
   height: 33px;
   border: 1px  black

@@ -6,34 +6,12 @@ import {VARIABLES} from '../AppSettings';
 @Component({
   moduleId: module.id,
   selector: 'menu-bar',
-  template: `
-      <div class="container">
-        <form (ngSubmit)="onSubmit()" #storyForm="ngForm">
-
-        <div class="form-group">
-          <label i18n="@@userId" for="name">name</label>
-          <input type="text" class="form-control" id="name"
-                 required
-                 [(ngModel)]="model.name" name="name"
-                 #name="ngModel">
-        </div>
-
-        <div class="form-group">
-          <label i18n="@@passwordId" for="author">password</label>
-          <input type="text" class="form-control" id="password"
-                 required
-                 [(ngModel)]="model.password" name="password"
-                 #name="ngModel">
-        </div>
-
-        <button i18n="@@submitId" type="submit" class="btn btn-default">submit</button>
-        </form>
-      </div>
-            `
+  templateUrl: '../html/menu-bar.component.html',
+  styleUrls: ['../css/menu-bar.component.css']
 })
 export class MenuBarComponent {
 
-  model: User = new User('');
+  model: User = new User('yafou');
   connected: boolean=false;
 
   constructor(private dataService: DataService) {
