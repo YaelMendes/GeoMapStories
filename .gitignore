@@ -6,3 +6,6 @@ app/*.js
 app/*.js.map
 app/components/*.js
 app/components/*.js.map
+app/objects/*.js
+app/objects/*.js.map
+
