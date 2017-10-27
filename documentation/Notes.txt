@@ -1,9 +1,13 @@
 
 TASKS LIST:
 
+FRONTEND:
 -presentation site web (CSS/SASS)
 -authentification
+
+BACKEND:
 -mettre à jour objects coté back (ajout group par exemple)
+-deployer sur AWS
 
 
 
