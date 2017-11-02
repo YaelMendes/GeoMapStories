@@ -19,9 +19,9 @@ export class StoryAddFormComponent {
 
   pageTitle = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
-  submitted = false;
+  submitted: boolean = false;
 
-  model = this.resetStory();
+  model: Story = this.resetStory();
 
 
   constructor(private dataService: DataService) {
