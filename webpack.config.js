@@ -1,5 +1,6 @@
 var path = require("path")
 var webpack = require("webpack")
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
 /*  entry: "./systemjs.config.js",*/
@@ -29,5 +30,19 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loader: "style!css" }
     ]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin('geomap.css', {
+      allChunks: true,
+      disable: true
+    }),
+
+    // new webpack.optimize.UglifyJsPlugin({
+    //     compress: {
+    //         warnings: false
+    //     }
+    // }),
+    new HardSourceWebpackPlugin()
+  ]
 };
