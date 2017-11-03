@@ -19,7 +19,7 @@ export class StoryAddFormComponent {
 
   pageTitle = VARIABLES.ADD_STORY_FORM_TITLE_2;
 
-  submitted: boolean = false;
+  submitted: boolean | number = false;
 
   model: Story = this.resetStory();
 
