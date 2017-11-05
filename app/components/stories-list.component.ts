@@ -9,7 +9,7 @@ import {Http} from "@angular/http";
   template: ` 
      <div>
      <label>stories list:</label><br/>
-     <li *ngFor="let story of allStories">
+     <li *ngFor='let story of allStories; let odd = odd' [ngClass]="{'alternate': !!odd}" >
        <label>title: </label><span>{{story.title}}</span>
        <label>author: </label><span>{{story.user.name}}</span>
        <label>description: </label><span>{{story.description}}</span>
@@ -19,6 +19,9 @@ import {Http} from "@angular/http";
      </li>
      </div>
     `,
+  styles: [`
+        .alternate {background-color: lightgrey;}
+    `]
 })
 export class StoryListComponent implements OnInit {
   @Input() allStories: Story[];
