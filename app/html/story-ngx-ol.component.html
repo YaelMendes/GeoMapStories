@@ -46,7 +46,7 @@
 
       <aol-layer-vector [opacity]="opacity">
         <aol-source-vector>
-          <div *ngFor="let story of allStories">
+          <div *ngFor="let story of allStories; let index = index" class="storyTooltip">
             <aol-feature>
               <aol-geometry-point>
                 <aol-coordinate [x]="story.address.coordinate.x"
@@ -62,6 +62,7 @@
                 </aol-style-circle>
               </aol-style>
             </aol-feature>
+            <span class="storyTooltipText">alalala</span>
           </div>
         </aol-source-vector>
       </aol-layer-vector>

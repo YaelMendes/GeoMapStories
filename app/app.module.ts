@@ -12,17 +12,17 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DataService }          from './services/data.service';
-import {StoryComponent} from "./components/story.component";
-import {StoryListComponent} from "./components/stories-list.component";
-import {ShowStoryComponent} from "./components/story-selected.component";
-import {StoryAddFormComponent} from "./components/story-add-form.component";
-import {StatisticsComponent} from "./components/stories-statistics.component";
-import {SandBoxComponent} from "./components/sandbox.component";
-import {StoryMapComponent} from "./components/stories-map.component";
-import {StoryNgxOlComponent} from "./components/story-ngx-ol.component";
+import {StoryComponent} from './components/story.component';
+import {StoryListComponent} from './components/stories-list.component';
+import {ShowStoryComponent} from './components/story-selected.component';
+import {StoryAddFormComponent} from './components/story-add-form.component';
+import {StatisticsComponent} from './components/stories-statistics.component';
+import {SandBoxComponent} from './components/sandbox.component';
+import {StoryNgxOlComponent} from './components/story-ngx-ol.component';
 
 import { AngularOpenlayersModule } from 'ngx-openlayers';
-import {MenuBarComponent} from "./components/menu-bar.component";
+import {MenuBarComponent} from './components/menu-bar.component';
+import {StoryPipe} from './pipes/story-pipe';
 
 @NgModule({
   imports: [
@@ -40,11 +40,11 @@ import {MenuBarComponent} from "./components/menu-bar.component";
     StoryListComponent,
     ShowStoryComponent,
     StoryAddFormComponent,
-    StoryMapComponent,
     StatisticsComponent,
     SandBoxComponent,
     StoryNgxOlComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    StoryPipe
   ],
   providers: [ DataService ],
   bootstrap: [ AppComponent ]
