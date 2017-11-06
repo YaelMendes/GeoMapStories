@@ -58,16 +58,17 @@ var StoryComponent = (function () {
     StoryComponent.prototype.gotoSandbox = function () {
         this.router.navigate(['/sandbox']);
     };
+    StoryComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-stories',
+            templateUrl: '../html/story.component.html',
+            styleUrls: ['../css/story.component.css']
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
+    ], StoryComponent);
     return StoryComponent;
+    var _a;
 }());
-StoryComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'my-stories',
-        templateUrl: '../html/story.component.html',
-        styleUrls: ['../css/story.component.css']
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router])
-], StoryComponent);
 exports.StoryComponent = StoryComponent;
 //# sourceMappingURL=story.component.js.map

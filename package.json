@@ -31,7 +31,7 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.4.3",
     "zone.js": "^0.8.16",
-    "ngx-openlayers": "0.6.10",
+    "ngx-openlayers": "0.8.13",
     "angular-in-memory-web-api": "~0.3.2"
   },
   "devDependencies": {

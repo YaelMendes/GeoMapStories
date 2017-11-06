@@ -31,15 +31,16 @@ var StatisticsComponent = (function () {
     StatisticsComponent.prototype.gotoMainStories = function () {
         this.router.navigate(['/stories']);
     };
+    StatisticsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'story-statistics',
+            template: "\n             <div>\n                <label>number of stories: </label><span>{{ storiesNumber }}</span>\n             </div>\n             <button (click)=\"gotoMainStories()\">Main menu</button>\n            "
+        }),
+        __metadata("design:paramtypes", [data_service_1.DataService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
+    ], StatisticsComponent);
     return StatisticsComponent;
+    var _a;
 }());
-StatisticsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'story-statistics',
-        template: "\n             <div>\n                <label>number of stories: </label><span>{{ storiesNumber }}</span>\n             </div>\n             <button (click)=\"gotoMainStories()\">Main menu</button>\n            "
-    }),
-    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router])
-], StatisticsComponent);
 exports.StatisticsComponent = StatisticsComponent;
 //# sourceMappingURL=stories-statistics.component.js.map

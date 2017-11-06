@@ -17,18 +17,18 @@ var story_1 = require("../objects/story");
 var ShowStoryComponent = (function () {
     function ShowStoryComponent() {
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", story_1.Story)
+    ], ShowStoryComponent.prototype, "selectedStory", void 0);
+    ShowStoryComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'selected-story',
+            template: " \n     <div>\n     <label>selected story:</label><br/>\n      <label>oneStory title: </label><span>{{selectedStory?.title}}</span>\n      <label>oneStory author: </label><span>{{selectedStory?.user.name}}</span>\n      <label>oneStory description: </label><span>{{selectedStory?.description}}</span>\n      <label>oneStory address: </label><span>{{selectedStory?.address.realAddress}}</span>\n      <label>oneStory begin: </label><span>{{selectedStory?.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </div>\n    ",
+        })
+    ], ShowStoryComponent);
     return ShowStoryComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", story_1.Story)
-], ShowStoryComponent.prototype, "selectedStory", void 0);
-ShowStoryComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'selected-story',
-        template: " \n     <div>\n     <label>selected story:</label><br/>\n      <label>oneStory title: </label><span>{{selectedStory?.title}}</span>\n      <label>oneStory author: </label><span>{{selectedStory?.user.name}}</span>\n      <label>oneStory description: </label><span>{{selectedStory?.description}}</span>\n      <label>oneStory address: </label><span>{{selectedStory?.address.realAddress}}</span>\n      <label>oneStory begin: </label><span>{{selectedStory?.begin | date:'d MMMM y'}}</span>\n       <br/>\n     </div>\n    ",
-    })
-], ShowStoryComponent);
 exports.ShowStoryComponent = ShowStoryComponent;
 //# sourceMappingURL=story-selected.component.js.map

@@ -78,32 +78,33 @@ var StoryNgxOlComponent = (function () {
   };
     * */
     StoryNgxOlComponent.prototype.pointerHasMoved = function (mapBrowserEvent) {
-        console.log(mapBrowserEvent);
+        // console.log(mapBrowserEvent);
+        // console.log("mapBrowserEvent.map="+mapBrowserEvent.map);
         var pixel = mapBrowserEvent.pixel;
         // let feature =
         // ....
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], StoryNgxOlComponent.prototype, "allStories", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], StoryNgxOlComponent.prototype, "messageEvent", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], StoryNgxOlComponent.prototype, "source", void 0);
+    StoryNgxOlComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'story-ngx-ol',
+            templateUrl: '../html/story-ngx-ol.component.html',
+            styleUrls: ['../css/story-ngx-ol.component.css']
+        })
+    ], StoryNgxOlComponent);
     return StoryNgxOlComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], StoryNgxOlComponent.prototype, "allStories", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], StoryNgxOlComponent.prototype, "messageEvent", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], StoryNgxOlComponent.prototype, "source", void 0);
-StoryNgxOlComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'story-ngx-ol',
-        templateUrl: '../html/story-ngx-ol.component.html',
-        styleUrls: ['../css/story-ngx-ol.component.css']
-    })
-], StoryNgxOlComponent);
 exports.StoryNgxOlComponent = StoryNgxOlComponent;
 //# sourceMappingURL=story-ngx-ol.component.js.map

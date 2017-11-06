@@ -109,7 +109,8 @@ function displayTooltip(evt) {
   * */
 
   pointerHasMoved(mapBrowserEvent: MapBrowserEvent) {
-    console.log(mapBrowserEvent);
+    // console.log(mapBrowserEvent);
+   // console.log("mapBrowserEvent.map="+mapBrowserEvent.map);
 
     let pixel = mapBrowserEvent.pixel;
 

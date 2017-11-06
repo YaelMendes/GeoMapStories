@@ -45,17 +45,18 @@ var SandBoxComponent = (function () {
     SandBoxComponent.prototype.goBack = function () {
         // this.location.back()
     };
+    SandBoxComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            inputs: ['nbFromComponent'],
+            template: "\n     <!-- 1-way : Component => DOM (interpolation) -->\n     <div> \n     <label>nbFromComponent: </label><span>{{ numberFromComponent }}</span>\n     <button (click)=\"onClick()\"> click me !</button>\n     <br/><br/>\n     </div>\n    \n     <!-- 1-way : Component => DOM (property binding) -->\n     <!--  <div> \n     <label for=\"title\">Title:</label>\n     <input name=\"title\">\n     <br/><br/>\n     </div>-->\n    \n     <!-- event binding : DOM => Component -->\n     <div> \n     <label>Enter:</label>\n     <input (keyup)=\"onKey($event)\">\n     <p>{{valuesFromDom}}</p>\n     <br/><br/> \n     </div>\n\n     <!-- 2 way binding : DOM <=> Component -->\n     <div> \n     <input type=\"text\" [(ngModel)]=\"prop\" /> \n     <label>prop: </label><span>{{ prop }}</span>\n     </div> \n     \n     \n     <button (click)=\"goBack()\">Back</button>\n    ",
+            styleUrls: ['../css/app.component.css']
+        }),
+        __param(0, core_1.Inject(common_1.Location)), __param(1, core_1.Inject(http_1.Http)),
+        __metadata("design:paramtypes", [typeof (_a = typeof common_1.Location !== "undefined" && common_1.Location) === "function" && _a || Object, typeof (_b = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _b || Object])
+    ], SandBoxComponent);
     return SandBoxComponent;
+    var _a, _b;
 }());
-SandBoxComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        inputs: ['nbFromComponent'],
-        template: "\n     <!-- 1-way : Component => DOM (interpolation) -->\n     <div> \n     <label>nbFromComponent: </label><span>{{ numberFromComponent }}</span>\n     <button (click)=\"onClick()\"> click me !</button>\n     <br/><br/>\n     </div>\n    \n     <!-- 1-way : Component => DOM (property binding) -->\n     <!--  <div> \n     <label for=\"title\">Title:</label>\n     <input name=\"title\">\n     <br/><br/>\n     </div>-->\n    \n     <!-- event binding : DOM => Component -->\n     <div> \n     <label>Enter:</label>\n     <input (keyup)=\"onKey($event)\">\n     <p>{{valuesFromDom}}</p>\n     <br/><br/> \n     </div>\n\n     <!-- 2 way binding : DOM <=> Component -->\n     <div> \n     <input type=\"text\" [(ngModel)]=\"prop\" /> \n     <label>prop: </label><span>{{ prop }}</span>\n     </div> \n     \n     \n     <button (click)=\"goBack()\">Back</button>\n    ",
-        styleUrls: ['../css/app.component.css']
-    }),
-    __param(0, core_1.Inject(common_1.Location)), __param(1, core_1.Inject(http_1.Http)),
-    __metadata("design:paramtypes", [common_1.Location, http_1.Http])
-], SandBoxComponent);
 exports.SandBoxComponent = SandBoxComponent;
 //# sourceMappingURL=sandbox.component.js.map
