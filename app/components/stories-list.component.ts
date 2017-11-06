@@ -15,6 +15,9 @@ import {Http} from "@angular/http";
        <label>description: </label><span>{{story.description}}</span>
        <label>address: </label><span>{{story.address.realAddress}}</span>
        <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>
+
+       <label>short story: </label><span>{{story | storyShortPipe}}</span>
+
        <br/>
      </li>
      </div>
