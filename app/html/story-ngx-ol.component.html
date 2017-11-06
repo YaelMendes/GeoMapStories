@@ -1,11 +1,14 @@
 <div>
 
+  <!-- http://jsfiddle.net/uarf1888/ -->
+
   <div>
     <aol-map
       id="aol-map"
       [width]="'10%'"
       [height]="'10%'"
-      (onClick)="fillCoordinates($event)">
+      (onClick)="fillCoordinates($event)"
+      (onPointerMove)="pointerHasMoved($event)">
 
       <aol-interaction-default></aol-interaction-default>
 
@@ -46,8 +49,9 @@
 
       <aol-layer-vector [opacity]="opacity">
         <aol-source-vector>
-          <div *ngFor="let story of allStories; let index = index" class="storyTooltip">
-            <aol-feature>
+          <div *ngFor="let story of allStories; let index = index" [ngClass]="storyTooltip">
+            <span [ngClass]="storyTooltipText">yop</span>
+            <aol-feature >
               <aol-geometry-point>
                 <aol-coordinate [x]="story.address.coordinate.x"
                                 [y]="story.address.coordinate.y"
@@ -62,7 +66,7 @@
                 </aol-style-circle>
               </aol-style>
             </aol-feature>
-            <span class="storyTooltipText">alalala</span>
+
           </div>
         </aol-source-vector>
       </aol-layer-vector>
@@ -71,8 +75,8 @@
   </div>
 
   <div id="map-navigation-bar">
-    <div>
-      <span i18n="@@pointsOpacityId">Points_opacity:</span>
+    <div class="storyTooltip">
+      <span i18n="@@pointsOpacityId"  class="storyTooltipText">Points_opacity:</span>
       <button (click)="increaseOpacity()">+</button>
       <button (click)="decreaseOpacity()">-</button>
     </div>

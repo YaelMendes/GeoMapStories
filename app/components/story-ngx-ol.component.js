@@ -62,6 +62,27 @@ var StoryNgxOlComponent = (function () {
         console.log(mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
         this.messageEvent.emit(mapBrowserEvent);
     };
+    /*
+    * map.addOverlay(overlay);
+  
+  function displayTooltip(evt) {
+    var pixel = evt.pixel;
+    var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
+      return feature;
+    });
+    tooltip.style.display = feature ? '' : 'none';
+    if (feature) {
+      overlay.setPosition(evt.coordinate);
+      tooltip.innerHTML = feature.get('name');
+    }
+  };
+    * */
+    StoryNgxOlComponent.prototype.pointerHasMoved = function (mapBrowserEvent) {
+        console.log(mapBrowserEvent);
+        var pixel = mapBrowserEvent.pixel;
+        // let feature =
+        // ....
+    };
     return StoryNgxOlComponent;
 }());
 __decorate([

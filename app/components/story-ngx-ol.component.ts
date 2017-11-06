@@ -90,4 +90,32 @@ export class StoryNgxOlComponent implements OnInit {
 
     this.messageEvent.emit(mapBrowserEvent);
   }
+
+
+  /*
+  * map.addOverlay(overlay);
+
+function displayTooltip(evt) {
+  var pixel = evt.pixel;
+  var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
+    return feature;
+  });
+  tooltip.style.display = feature ? '' : 'none';
+  if (feature) {
+    overlay.setPosition(evt.coordinate);
+    tooltip.innerHTML = feature.get('name');
+  }
+};
+  * */
+
+  pointerHasMoved(mapBrowserEvent: MapBrowserEvent) {
+    console.log(mapBrowserEvent);
+
+    let pixel = mapBrowserEvent.pixel;
+
+   // let feature =
+
+    // ....
+  }
+
 }
