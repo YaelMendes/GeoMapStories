@@ -22,6 +22,7 @@ import {StoryNgxOlComponent} from './components/story-ngx-ol.component';
 
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import {MenuBarComponent} from './components/menu-bar.component';
+import {WindowRef} from './components/WindowRef';
 import {StoryPipe} from './pipes/story-pipe';
 
 @NgModule({
@@ -46,7 +47,7 @@ import {StoryPipe} from './pipes/story-pipe';
     MenuBarComponent,
     StoryPipe
   ],
-  providers: [ DataService ],
+  providers: [ DataService, WindowRef ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

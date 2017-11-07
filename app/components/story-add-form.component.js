@@ -61,24 +61,23 @@ var StoryAddFormComponent = (function () {
     StoryAddFormComponent.prototype.resetStory = function () {
         return new story_1.Story('', new user_1.User(''), '', new address_1.Address(''), new Date(), new Date(), AppSettings_1.VARIABLES.DEFAULT_USER_MAP_COLOR);
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], StoryAddFormComponent.prototype, "stories", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", typeof (_a = typeof openlayers_1.MapBrowserEvent !== "undefined" && openlayers_1.MapBrowserEvent) === "function" && _a || Object)
-    ], StoryAddFormComponent.prototype, "mapBrowserEvent", void 0);
-    StoryAddFormComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'story-add-form',
-            templateUrl: '../html/story-add-form.component.html',
-        }),
-        __metadata("design:paramtypes", [data_service_1.DataService])
-    ], StoryAddFormComponent);
     return StoryAddFormComponent;
-    var _a;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], StoryAddFormComponent.prototype, "stories", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", openlayers_1.MapBrowserEvent)
+], StoryAddFormComponent.prototype, "mapBrowserEvent", void 0);
+StoryAddFormComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'story-add-form',
+        templateUrl: '../html/story-add-form.component.html',
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService])
+], StoryAddFormComponent);
 exports.StoryAddFormComponent = StoryAddFormComponent;
 //# sourceMappingURL=story-add-form.component.js.map

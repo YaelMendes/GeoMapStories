@@ -4,6 +4,8 @@ import {Story} from '../objects/story';
 
 import {MapBrowserEvent, Coordinate} from 'openlayers';
 
+import { WindowRef } from './WindowRef';
+
 @Component({
   moduleId: module.id,
   selector: 'story-ngx-ol',
@@ -32,6 +34,14 @@ export class StoryNgxOlComponent implements OnInit {
   public matrixIds: [string];
   public origin: Coordinate;
   public crossOrigin: string;
+
+  nativeWindow: any;
+
+  constructor(private winRef: WindowRef) {
+    // getting the native window obj
+    this.nativeWindow = winRef.nativeWindow;
+    console.log('Native window obj', winRef.nativeWindow);
+  }
 
   ngOnInit(): void {
 
@@ -112,9 +122,18 @@ function displayTooltip(evt) {
     // console.log(mapBrowserEvent);
    // console.log("mapBrowserEvent.map="+mapBrowserEvent.map);
 
+    let map = mapBrowserEvent.map;
+
+    // map.addOverlay()
+    //var featureLayer;
+    //map.addLayer(featureLayer);
+
     let pixel = mapBrowserEvent.pixel;
 
-   // let feature =
+    let feature = mapBrowserEvent.map.forEachFeatureAtPixel(pixel, function(feature) {
+      return feature;
+    });
+
 
     // ....
   }

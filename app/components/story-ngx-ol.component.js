@@ -10,12 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var WindowRef_1 = require("./WindowRef");
 var StoryNgxOlComponent = (function () {
-    function StoryNgxOlComponent() {
+    function StoryNgxOlComponent(winRef) {
+        this.winRef = winRef;
         this.messageEvent = new core_1.EventEmitter();
         this.zoom = 15;
         this.opacity = 1.0;
         this.width = 5;
+        // getting the native window obj
+        this.nativeWindow = winRef.nativeWindow;
+        console.log('Native window obj', winRef.nativeWindow);
     }
     StoryNgxOlComponent.prototype.ngOnInit = function () {
         if (this.source === undefined) {
@@ -80,31 +85,38 @@ var StoryNgxOlComponent = (function () {
     StoryNgxOlComponent.prototype.pointerHasMoved = function (mapBrowserEvent) {
         // console.log(mapBrowserEvent);
         // console.log("mapBrowserEvent.map="+mapBrowserEvent.map);
+        var map = mapBrowserEvent.map;
+        // map.addOverlay()
+        //var featureLayer;
+        //map.addLayer(featureLayer);
         var pixel = mapBrowserEvent.pixel;
-        // let feature =
+        var feature = mapBrowserEvent.map.forEachFeatureAtPixel(pixel, function (feature) {
+            return feature;
+        });
         // ....
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], StoryNgxOlComponent.prototype, "allStories", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], StoryNgxOlComponent.prototype, "messageEvent", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], StoryNgxOlComponent.prototype, "source", void 0);
-    StoryNgxOlComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'story-ngx-ol',
-            templateUrl: '../html/story-ngx-ol.component.html',
-            styleUrls: ['../css/story-ngx-ol.component.css']
-        })
-    ], StoryNgxOlComponent);
     return StoryNgxOlComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], StoryNgxOlComponent.prototype, "allStories", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], StoryNgxOlComponent.prototype, "messageEvent", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], StoryNgxOlComponent.prototype, "source", void 0);
+StoryNgxOlComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'story-ngx-ol',
+        templateUrl: '../html/story-ngx-ol.component.html',
+        styleUrls: ['../css/story-ngx-ol.component.css']
+    }),
+    __metadata("design:paramtypes", [WindowRef_1.WindowRef])
+], StoryNgxOlComponent);
 exports.StoryNgxOlComponent = StoryNgxOlComponent;
 //# sourceMappingURL=story-ngx-ol.component.js.map

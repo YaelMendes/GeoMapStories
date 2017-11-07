@@ -17,21 +17,20 @@ var StoryListComponent = (function () {
     }
     StoryListComponent.prototype.ngOnInit = function () {
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], StoryListComponent.prototype, "allStories", void 0);
-    StoryListComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'all-stories',
-            template: " \n     <div>\n     <label>stories list:</label><br/>\n     <li *ngFor='let story of allStories; let odd = odd' [ngClass]=\"{'alternate': !!odd}\" >\n       <label>title: </label><span>{{story.title}}</span>\n       <label>author: </label><span>{{story.user.name}}</span>\n       <label>description: </label><span>{{story.description}}</span>\n       <label>address: </label><span>{{story.address.realAddress}}</span>\n       <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>\n\n       <label>short story: </label><span>{{story | storyShortPipe}}</span>\n\n       <br/>\n     </li>\n     </div>\n    ",
-            styles: ["\n        .alternate {background-color: lightgrey;}\n    "]
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object])
-    ], StoryListComponent);
     return StoryListComponent;
-    var _a;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], StoryListComponent.prototype, "allStories", void 0);
+StoryListComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'all-stories',
+        template: " \n     <div>\n     <label>stories list:</label><br/>\n     <li *ngFor='let story of allStories; let odd = odd' [ngClass]=\"{'alternate': !!odd}\" >\n       <label>title: </label><span>{{story.title}}</span>\n       <label>author: </label><span>{{story.user.name}}</span>\n       <label>description: </label><span>{{story.description}}</span>\n       <label>address: </label><span>{{story.address.realAddress}}</span>\n       <label>begin: </label><span>{{story.begin | date:'d MMMM y'}}</span>\n\n       <label>short story: </label><span>{{story | storyShortPipe}}</span>\n\n       <br/>\n     </li>\n     </div>\n    ",
+        styles: ["\n        .alternate {background-color: lightgrey;}\n    "]
+    }),
+    __metadata("design:paramtypes", [http_1.Http])
+], StoryListComponent);
 exports.StoryListComponent = StoryListComponent;
 //# sourceMappingURL=stories-list.component.js.map

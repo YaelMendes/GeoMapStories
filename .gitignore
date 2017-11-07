@@ -8,4 +8,5 @@ app/components/*.js
 app/components/*.js.map
 app/objects/*.js
 app/objects/*.js.map
-
+app/pipes/story-pipe.js
+app/pipes/story-pipe.js.map
