@@ -34,6 +34,11 @@ export class StoryListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+     this.displayStories();
+  }
+
+  private displayStories() : void {
+    this.allStories.map(st => console.log(st.toString()));
   }
 
 }

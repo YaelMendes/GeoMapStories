@@ -23,5 +23,6 @@ export class Story {
 
   }
 
+  public toString = () => JSON.stringify(this, null, '  ');
 
 }
