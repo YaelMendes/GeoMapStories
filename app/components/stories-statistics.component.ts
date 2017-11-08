@@ -6,7 +6,6 @@ import {DataService} from "../services/data.service";
 import {Router} from "@angular/router";
 
 @Component({
-  moduleId: module.id,
   selector: 'story-statistics',
   template: `
              <div>

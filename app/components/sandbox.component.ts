@@ -7,7 +7,6 @@ import {Http} from "@angular/http";
 import {Route, Params} from "@angular/router";
 
 @Component({
-  moduleId: module.id,
   inputs: ['nbFromComponent'],
   template:
     `

@@ -4,7 +4,6 @@ import {DataService} from '../services/data.service';
 import {VARIABLES} from '../AppSettings';
 
 @Component({
-  moduleId: module.id,
   selector: 'menu-bar',
   templateUrl: '../html/menu-bar.component.html',
   styleUrls: ['../css/menu-bar.component.css']

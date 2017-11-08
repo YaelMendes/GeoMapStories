@@ -9,7 +9,6 @@ import {VARIABLES} from '../AppSettings';
 import {MapBrowserEvent} from 'openlayers';
 
 @Component({
-  moduleId: module.id,
   selector: 'story-add-form',
   templateUrl: '../html/story-add-form.component.html',
 })

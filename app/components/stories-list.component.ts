@@ -4,7 +4,6 @@ import {Story} from "../objects/story";
 import {Http} from "@angular/http";
 
 @Component({
-  moduleId: module.id,
   selector: 'all-stories',
   template: ` 
      <div>

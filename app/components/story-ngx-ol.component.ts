@@ -7,7 +7,6 @@ import {MapBrowserEvent, Coordinate} from 'openlayers';
 import { WindowRef } from './WindowRef';
 
 @Component({
-  moduleId: module.id,
   selector: 'story-ngx-ol',
   templateUrl: '../html/story-ngx-ol.component.html',
   styleUrls: ['../css/story-ngx-ol.component.css']

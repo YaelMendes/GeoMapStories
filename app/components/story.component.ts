@@ -11,7 +11,6 @@ import {StoryNgxOlComponent} from "./story-ngx-ol.component";
 import {MapBrowserEvent} from 'openlayers';
 
 @Component({
-  moduleId: module.id,
   selector: 'my-stories',
   templateUrl: '../html/story.component.html',
   styleUrls: ['../css/story.component.css']
