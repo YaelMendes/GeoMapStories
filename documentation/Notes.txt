@@ -33,7 +33,7 @@ ng serve --aot --i18n-file=app/i18n/messages.fr.xlf --locale=fr --i18n-format=xl
 
 http://geopole.free.fr/?Geoportail-et-OpenLayers
 
-
+https://openlayers.org/workshop/fr/
 
 
 -------
