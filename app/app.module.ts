@@ -48,6 +48,7 @@ import {StoryPipe} from './pipes/story-pipe';
     StoryPipe
   ],
   providers: [ DataService, WindowRef ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  exports: [ StoryComponent ]
 })
 export class AppModule { }
