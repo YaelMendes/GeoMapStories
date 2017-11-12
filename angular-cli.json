@@ -1,4 +1,6 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+
   "project": {
     "version": "1.0.0-beta.25.5",
     "name": "the-test"
@@ -34,7 +36,7 @@
   "packages": [],
   "e2e": {
     "protractor": {
-      "config": "./protractor.conf.js"
+      "config": "./protractor.config.js"
     }
   },
   "lint": [
