@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 import { DataService } from '../services/data.service';
-import {Story} from "../objects/story";
-import {Http} from "@angular/http";
-import {Router} from "@angular/router";
-import {InMemoryDataService} from "../services/in-memory-data.service"
-import {VARIABLES} from "../AppSettings";
-import {StoryNgxOlComponent} from "./story-ngx-ol.component";
+import {Story} from '../objects/story';
+import {Http} from '@angular/http';
+import {Router} from '@angular/router';
+import {InMemoryDataService} from '../services/in-memory-data.service'
+import {VARIABLES} from '../AppSettings';
+import {StoryNgxOlComponent} from './story-ngx-ol.component';
 
 import {MapBrowserEvent} from 'openlayers';
 
@@ -17,7 +17,7 @@ import {MapBrowserEvent} from 'openlayers';
 })
 export class StoryComponent implements OnInit {
   stories: Story[];
-  story : Story;
+  story: Story;
 
   mapBrowserEvent: MapBrowserEvent;
 
@@ -25,10 +25,10 @@ export class StoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("-- ngOnInit ");
+    console.log('-- ngOnInit ');
 
     if (VARIABLES.MODE_TEST) {
-      if (this.stories === undefined || this.stories.length == 0) {
+      if (this.stories === undefined || this.stories.length === 0) {
         this.stories = this.retrieveMockStories();
       }
     } else {
@@ -36,16 +36,16 @@ export class StoryComponent implements OnInit {
     }
   }
 
-  retrieveMockStories() : Story[] {
+  retrieveMockStories(): Story[] {
 
     let storiees = InMemoryDataService.getSomeStories();
     return storiees;
   }
 
-  retrieveObservableStories(){
+  retrieveObservableStories() {
     this.dataService.getObservableStories()
-      .subscribe(stories => this.stories = stories, err => { console.log(err);});
-    console.log('calling retrieveStories....:'+this.stories);
+      .subscribe(stories => this.stories = stories, err => { console.log(err); });
+    console.log('calling retrieveStories....:' + this.stories);
   }
 
   /*
@@ -58,7 +58,7 @@ export class StoryComponent implements OnInit {
   }*/
 
   receiveMessage(mapBrowserEvent: MapBrowserEvent) {
-    console.log("-- event received=" + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
+    console.log('-- event received=' + mapBrowserEvent.coordinate[0] + ',' + mapBrowserEvent.coordinate[1]);
 
     this.mapBrowserEvent = mapBrowserEvent;
   }
