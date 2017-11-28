@@ -11,7 +11,7 @@
       [height]="'100%'"
       (onClick)="fillCoordinates($event)"
       (onPointerMove)="pointerHasMoved($event)"
-      >
+    >
 
       <div id="tooltip" class="tooltip"></div>
 
@@ -56,22 +56,19 @@
         <aol-source-vector>
           <div *ngFor="let story of allStories; let index = index" [ngClass]="'storyTooltip'">
             <span [ngClass]="'storyTooltipText'">yop</span>
-            <aol-feature >
+            <aol-feature>
               <aol-geometry-point>
-
-
                 <aol-overlay>
                   <aol-coordinate [x]="story.address.coordinate.x"
                                   [y]="story.address.coordinate.y"
                                   [srid]="story.address.coordinate.srid">
                   </aol-coordinate>
                   <aol-content>
-                    <div >
+                    <div>
                       <h1>This is an overlay</h1>
                     </div>
                   </aol-content>
                 </aol-overlay>
-
               </aol-geometry-point>
               <aol-style>
                 <aol-style-circle [radius]="5">
@@ -91,7 +88,7 @@
 
   <div id="map-navigation-bar">
     <div class="storyTooltip">
-      <span i18n="@@pointsOpacityId"  class="storyTooltipText">Points_opacity:</span>
+      <span i18n="@@pointsOpacityId" class="storyTooltipText">Points_opacity:</span>
       <button (click)="increaseOpacity()">+</button>
       <button (click)="decreaseOpacity()">-</button>
     </div>

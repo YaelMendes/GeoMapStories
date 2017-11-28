@@ -40,7 +40,7 @@
         source: new ol.source.WMTS({
           attributions: ["IGN-F/Géoportail"],
           url:'https://wxs.ign.fr/sx4johfuj8woxxvrphfuzzd0/geoportail/wmts',
-          layer:'ORTHOIMAGERY.ORTHOPHOTOS',
+          layer:'GEOGRAPHICALGRIDSYSTEMS.MAPS',
           matrixSet: 'PM',
           format: 'image/jpeg',
           tileGrid: new ol.tilegrid.WMTS({
@@ -54,8 +54,35 @@
     ],
     target: 'viewerDiv',
     view: new ol.View({
-      center: [260516,6246918],
-      zoom: 10
+      center: [692249.47,5804715.26],
+      zoom: 15
     })
   });
+
+  var coord = [692249.47, 5804715.26];
+
+  var vectorSource = new ol.source.GeoJSON(
+    ({
+      object: {
+        'type': 'FeatureCollection',
+        'crs': {
+          'type': 'name',
+          'properties': {
+            'name': 'EPSG:3857'
+          }
+        },
+        'features': [
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': coord
+            }
+          }
+        ]
+      }
+    }));
+
+ // vectorSource.a
+
 </script>

@@ -9,8 +9,8 @@ export class StoryPipe implements PipeTransform {
 
   transform(value: Story, ...args: any[]): string {
     return value.description ?
-      value.description.slice(0, 6) + "..." + value.user.name.slice(0, 3) + "...":
-      "";
+      value.description.slice(0, 6) + '...' + value.user.name.slice(0, 3) + '...' :
+      '';
   }
 
 
