@@ -40,6 +40,8 @@ https://openlayers.org/workshop/fr/
 
 npm install -g @angular/cli
 
+----
+WAS COMMITED ON TEST BRANCH ONLY !!!
 MASTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 22222
