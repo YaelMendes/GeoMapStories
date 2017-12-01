@@ -40,8 +40,5 @@ https://openlayers.org/workshop/fr/
 
 npm install -g @angular/cli
 
-MASTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-22222
-
-33333
+testtttt

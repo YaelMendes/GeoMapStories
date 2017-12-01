@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://openlayers.org/en/v4.3.3/css/ol.css" type="text/css">
+<style type="text/css">
+  #info {
+    max-width: 100px;
+    background-color: black;
+    color: white;
+    opacity: 0.9;
+    font-size: 8pt;
+    font-family: sans-serif;
+    margin: 3px;
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 0;
+    padding: 2px 0 2px 5px;
+  }
+</style>
+<script type="text/javascript" src="https://openlayers.org/en/v4.3.3/build/ol.js"></script>
+<div id="map" class="map">
+  <div id="info">
+  </div>
+</div>
+<script type="text/javascript">
+  var vector = new ol.layer.Vector({
+    source: new ol.source.Vector({
+      url: 'http://openlayers.org/en/v3.17.1/examples/data/kml/2012_Earthquakes_Mag5.kml',
+      format: new ol.format.KML({
+        extractStyles: false
+      })
+    })
+  });
+
+  var raster = new ol.layer.Tile({
+    source: new ol.source.Stamen({
+      layer: 'toner'
+    })
+  });
+
+  var map = new ol.Map({
+    layers: [raster, vector],
+    target: 'map',
+    view: new ol.View({
+      center: [0, 0],
+      zoom: 2
+    })
+  });
+
+  var overlay = new ol.Overlay({
+    element: document.getElementById('info'),
+    positioning: 'bottom-left'
+  });
+  overlay.setMap(map);
+
+  map.on(['pointermove', 'singleclick'], function(evt) {
+    var feature = map.forEachFeatureAtPixel(evt.pixel, function(feature) {
+      overlay.setPosition(evt.coordinate);
+      overlay.getElement().innerHTML = feature.get('name');
+      return feature;
+    });
+    overlay.getElement().style.display = feature ? '' : 'none';
+    document.body.style.cursor = feature ? 'pointer' : '';
+  });
+
+</script>

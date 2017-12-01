@@ -6,7 +6,9 @@
   }
 </style>
 <script type="text/javascript" src="https://openlayers.org/en/v4.3.3/build/ol.js"></script>
-<div id="viewerDiv"></div>
+<div id="viewerDiv"class="map">
+  <div id="tooltip" class="tooltip"></div>
+</div>
 <script type="text/javascript">
   var projection = ol.proj.get('EPSG:3857');
   var resolutions = [
@@ -34,6 +36,43 @@
     0.07464553543474241
   ] ;
 
+
+
+  var coord = [692249.47, 5804715.26 ];
+
+/*      st1.address.coordinate = new Coordinate(692249.10, 5804715.26, 'EPSG:3857');
+    st2.address.coordinate = new Coordinate(692470.47, 5804715.26, 'EPSG:3857');
+    st3.address.coordinate = new Coordinate(692050.37, 5804715.26, 'EPSG:3857');*/
+
+  var geojsonObject = {
+    'type': 'FeatureCollection',
+    'crs': {
+      'type': 'name',
+      'properties': {
+        'name': 'EPSG:3857'
+      }
+    },
+    'features': [{
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': coord
+      }
+    }
+    ]
+  };
+
+  var vectorSource2 = new ol.source.Vector({
+    features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
+  });
+
+  var vectorLayer = new ol.layer.Vector({
+    source: vectorSource2,
+   // style: styleFunction
+  });
+
+  //vectorSource.addLayer(vectorLayer)
+
   var map = new ol.Map({
     layers: [
       new ol.layer.Tile({
@@ -50,7 +89,9 @@
           }),
           style: 'normal'
         })
-      })
+      }),
+      vectorLayer
+
     ],
     target: 'viewerDiv',
     view: new ol.View({
@@ -59,30 +100,6 @@
     })
   });
 
-  var coord = [692249.47, 5804715.26];
-
-  var vectorSource = new ol.source.GeoJSON(
-    ({
-      object: {
-        'type': 'FeatureCollection',
-        'crs': {
-          'type': 'name',
-          'properties': {
-            'name': 'EPSG:3857'
-          }
-        },
-        'features': [
-          {
-            'type': 'Feature',
-            'geometry': {
-              'type': 'Point',
-              'coordinates': coord
-            }
-          }
-        ]
-      }
-    }));
-
- // vectorSource.a
+ // solution from: https://stackoverflow.com/questions/35848697/openlayers-3-how-to-make-tootlip-for-feature
 
 </script>
